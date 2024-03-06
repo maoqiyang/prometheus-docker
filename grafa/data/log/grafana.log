@@ -1,0 +1,764 @@
+logger=settings t=2024-03-06T09:43:50.778503517Z level=info msg="Starting Grafana" version=9.0.3 commit=023f9251a branch=HEAD compiled=2022-07-14T20:47:44Z
+logger=settings t=2024-03-06T09:43:50.77873619Z level=info msg="Config loaded from" file=/root/grafa/grafana-9.0.3/conf/defaults.ini
+logger=settings t=2024-03-06T09:43:50.778757652Z level=info msg="Path Home" path=/root/grafa/grafana-9.0.3
+logger=settings t=2024-03-06T09:43:50.778769829Z level=info msg="Path Data" path=/root/grafa/grafana-9.0.3/data
+logger=settings t=2024-03-06T09:43:50.778778223Z level=info msg="Path Logs" path=/root/grafa/grafana-9.0.3/data/log
+logger=settings t=2024-03-06T09:43:50.778786043Z level=info msg="Path Plugins" path=/root/grafa/grafana-9.0.3/data/plugins
+logger=settings t=2024-03-06T09:43:50.778794128Z level=info msg="Path Provisioning" path=/root/grafa/grafana-9.0.3/conf/provisioning
+logger=settings t=2024-03-06T09:43:50.778803843Z level=info msg="App mode production"
+logger=sqlstore t=2024-03-06T09:43:50.778882663Z level=info msg="Connecting to DB" dbtype=sqlite3
+logger=sqlstore t=2024-03-06T09:43:50.778905792Z level=info msg="Creating SQLite database file" path=/root/grafa/grafana-9.0.3/data/grafana.db
+logger=migrator t=2024-03-06T09:43:50.780151922Z level=info msg="Starting DB migrations"
+logger=migrator t=2024-03-06T09:43:50.780250026Z level=info msg="Executing migration" id="create migration_log table"
+logger=migrator t=2024-03-06T09:43:50.78597623Z level=info msg="Executing migration" id="create user table"
+logger=migrator t=2024-03-06T09:43:50.789040242Z level=info msg="Executing migration" id="add unique index user.login"
+logger=migrator t=2024-03-06T09:43:50.792081573Z level=info msg="Executing migration" id="add unique index user.email"
+logger=migrator t=2024-03-06T09:43:50.795124363Z level=info msg="Executing migration" id="drop index UQE_user_login - v1"
+logger=migrator t=2024-03-06T09:43:50.798339974Z level=info msg="Executing migration" id="drop index UQE_user_email - v1"
+logger=migrator t=2024-03-06T09:43:50.80158036Z level=info msg="Executing migration" id="Rename table user to user_v1 - v1"
+logger=migrator t=2024-03-06T09:43:50.805015326Z level=info msg="Executing migration" id="create user table v2"
+logger=migrator t=2024-03-06T09:43:50.808093597Z level=info msg="Executing migration" id="create index UQE_user_login - v2"
+logger=migrator t=2024-03-06T09:43:50.811074517Z level=info msg="Executing migration" id="create index UQE_user_email - v2"
+logger=migrator t=2024-03-06T09:43:50.818153993Z level=info msg="Executing migration" id="copy data_source v1 to v2"
+logger=migrator t=2024-03-06T09:43:50.821264444Z level=info msg="Executing migration" id="Drop old table user_v1"
+logger=migrator t=2024-03-06T09:43:50.824287626Z level=info msg="Executing migration" id="Add column help_flags1 to user table"
+logger=migrator t=2024-03-06T09:43:50.827920722Z level=info msg="Executing migration" id="Update user table charset"
+logger=migrator t=2024-03-06T09:43:50.830799798Z level=info msg="Executing migration" id="Add last_seen_at column to user"
+logger=migrator t=2024-03-06T09:43:50.833829903Z level=info msg="Executing migration" id="Add missing user data"
+logger=migrator t=2024-03-06T09:43:50.836951061Z level=info msg="Executing migration" id="Add is_disabled column to user"
+logger=migrator t=2024-03-06T09:43:50.8399832Z level=info msg="Executing migration" id="Add index user.login/user.email"
+logger=migrator t=2024-03-06T09:43:50.843092575Z level=info msg="Executing migration" id="Add is_service_account column to user"
+logger=migrator t=2024-03-06T09:43:50.846355329Z level=info msg="Executing migration" id="Update is_service_account column to nullable"
+logger=migrator t=2024-03-06T09:43:50.849912862Z level=info msg="Executing migration" id="create temp user table v1-7"
+logger=migrator t=2024-03-06T09:43:50.852996361Z level=info msg="Executing migration" id="create index IDX_temp_user_email - v1-7"
+logger=migrator t=2024-03-06T09:43:50.856037588Z level=info msg="Executing migration" id="create index IDX_temp_user_org_id - v1-7"
+logger=migrator t=2024-03-06T09:43:50.859017041Z level=info msg="Executing migration" id="create index IDX_temp_user_code - v1-7"
+logger=migrator t=2024-03-06T09:43:50.867004601Z level=info msg="Executing migration" id="create index IDX_temp_user_status - v1-7"
+logger=migrator t=2024-03-06T09:43:50.869984256Z level=info msg="Executing migration" id="Update temp_user table charset"
+logger=migrator t=2024-03-06T09:43:50.872959269Z level=info msg="Executing migration" id="drop index IDX_temp_user_email - v1"
+logger=migrator t=2024-03-06T09:43:50.875950528Z level=info msg="Executing migration" id="drop index IDX_temp_user_org_id - v1"
+logger=migrator t=2024-03-06T09:43:50.878963318Z level=info msg="Executing migration" id="drop index IDX_temp_user_code - v1"
+logger=migrator t=2024-03-06T09:43:50.887371238Z level=info msg="Executing migration" id="drop index IDX_temp_user_status - v1"
+logger=migrator t=2024-03-06T09:43:50.890445656Z level=info msg="Executing migration" id="Rename table temp_user to temp_user_tmp_qwerty - v1"
+logger=migrator t=2024-03-06T09:43:50.897352822Z level=info msg="Executing migration" id="create temp_user v2"
+logger=migrator t=2024-03-06T09:43:50.900419427Z level=info msg="Executing migration" id="create index IDX_temp_user_email - v2"
+logger=migrator t=2024-03-06T09:43:50.906982409Z level=info msg="Executing migration" id="create index IDX_temp_user_org_id - v2"
+logger=migrator t=2024-03-06T09:43:50.911100647Z level=info msg="Executing migration" id="create index IDX_temp_user_code - v2"
+logger=migrator t=2024-03-06T09:43:50.914157548Z level=info msg="Executing migration" id="create index IDX_temp_user_status - v2"
+logger=migrator t=2024-03-06T09:43:50.917324251Z level=info msg="Executing migration" id="copy temp_user v1 to v2"
+logger=migrator t=2024-03-06T09:43:50.920350326Z level=info msg="Executing migration" id="drop temp_user_tmp_qwerty"
+logger=migrator t=2024-03-06T09:43:50.927425264Z level=info msg="Executing migration" id="Set created for temp users that will otherwise prematurely expire"
+logger=migrator t=2024-03-06T09:43:50.930470542Z level=info msg="Executing migration" id="create star table"
+logger=migrator t=2024-03-06T09:43:50.937289419Z level=info msg="Executing migration" id="add unique index star.user_id_dashboard_id"
+logger=migrator t=2024-03-06T09:43:50.940479614Z level=info msg="Executing migration" id="create org table v1"
+logger=migrator t=2024-03-06T09:43:50.943578028Z level=info msg="Executing migration" id="create index UQE_org_name - v1"
+logger=migrator t=2024-03-06T09:43:50.946688781Z level=info msg="Executing migration" id="create org_user table v1"
+logger=migrator t=2024-03-06T09:43:50.949704829Z level=info msg="Executing migration" id="create index IDX_org_user_org_id - v1"
+logger=migrator t=2024-03-06T09:43:50.957493529Z level=info msg="Executing migration" id="create index UQE_org_user_org_id_user_id - v1"
+logger=migrator t=2024-03-06T09:43:50.960755396Z level=info msg="Executing migration" id="create index IDX_org_user_user_id - v1"
+logger=migrator t=2024-03-06T09:43:50.963841713Z level=info msg="Executing migration" id="Update org table charset"
+logger=migrator t=2024-03-06T09:43:50.966863805Z level=info msg="Executing migration" id="Update org_user table charset"
+logger=migrator t=2024-03-06T09:43:50.969714249Z level=info msg="Executing migration" id="Migrate all Read Only Viewers to Viewers"
+logger=migrator t=2024-03-06T09:43:50.977362441Z level=info msg="Executing migration" id="create dashboard table"
+logger=migrator t=2024-03-06T09:43:50.980444579Z level=info msg="Executing migration" id="add index dashboard.account_id"
+logger=migrator t=2024-03-06T09:43:50.983525579Z level=info msg="Executing migration" id="add unique index dashboard_account_id_slug"
+logger=migrator t=2024-03-06T09:43:50.986808694Z level=info msg="Executing migration" id="create dashboard_tag table"
+logger=migrator t=2024-03-06T09:43:50.989897956Z level=info msg="Executing migration" id="add unique index dashboard_tag.dasboard_id_term"
+logger=migrator t=2024-03-06T09:43:50.997455202Z level=info msg="Executing migration" id="drop index UQE_dashboard_tag_dashboard_id_term - v1"
+logger=migrator t=2024-03-06T09:43:51.000621766Z level=info msg="Executing migration" id="Rename table dashboard to dashboard_v1 - v1"
+logger=migrator t=2024-03-06T09:43:51.007340612Z level=info msg="Executing migration" id="create dashboard v2"
+logger=migrator t=2024-03-06T09:43:51.010394053Z level=info msg="Executing migration" id="create index IDX_dashboard_org_id - v2"
+logger=migrator t=2024-03-06T09:43:51.016610182Z level=info msg="Executing migration" id="create index UQE_dashboard_org_id_slug - v2"
+logger=migrator t=2024-03-06T09:43:51.020005819Z level=info msg="Executing migration" id="copy dashboard v1 to v2"
+logger=migrator t=2024-03-06T09:43:51.022956416Z level=info msg="Executing migration" id="drop table dashboard_v1"
+logger=migrator t=2024-03-06T09:43:51.027338583Z level=info msg="Executing migration" id="alter dashboard.data to mediumtext v1"
+logger=migrator t=2024-03-06T09:43:51.03018484Z level=info msg="Executing migration" id="Add column updated_by in dashboard - v2"
+logger=migrator t=2024-03-06T09:43:51.037339437Z level=info msg="Executing migration" id="Add column created_by in dashboard - v2"
+logger=migrator t=2024-03-06T09:43:51.040537972Z level=info msg="Executing migration" id="Add column gnetId in dashboard"
+logger=migrator t=2024-03-06T09:43:51.044789743Z level=info msg="Executing migration" id="Add index for gnetId in dashboard"
+logger=migrator t=2024-03-06T09:43:51.048787086Z level=info msg="Executing migration" id="Add column plugin_id in dashboard"
+logger=migrator t=2024-03-06T09:43:51.057453725Z level=info msg="Executing migration" id="Add index for plugin_id in dashboard"
+logger=migrator t=2024-03-06T09:43:51.060544397Z level=info msg="Executing migration" id="Add index for dashboard_id in dashboard_tag"
+logger=migrator t=2024-03-06T09:43:51.067366685Z level=info msg="Executing migration" id="Update dashboard table charset"
+logger=migrator t=2024-03-06T09:43:51.070284599Z level=info msg="Executing migration" id="Update dashboard_tag table charset"
+logger=migrator t=2024-03-06T09:43:51.073190061Z level=info msg="Executing migration" id="Add column folder_id in dashboard"
+logger=migrator t=2024-03-06T09:43:51.076485236Z level=info msg="Executing migration" id="Add column isFolder in dashboard"
+logger=migrator t=2024-03-06T09:43:51.079733177Z level=info msg="Executing migration" id="Add column has_acl in dashboard"
+logger=migrator t=2024-03-06T09:43:51.087407071Z level=info msg="Executing migration" id="Add column uid in dashboard"
+logger=migrator t=2024-03-06T09:43:51.091206669Z level=info msg="Executing migration" id="Update uid column values in dashboard"
+logger=migrator t=2024-03-06T09:43:51.094216278Z level=info msg="Executing migration" id="Add unique index dashboard_org_id_uid"
+logger=migrator t=2024-03-06T09:43:51.097650541Z level=info msg="Executing migration" id="Remove unique index org_id_slug"
+logger=migrator t=2024-03-06T09:43:51.100816717Z level=info msg="Executing migration" id="Update dashboard title length"
+logger=migrator t=2024-03-06T09:43:51.10734807Z level=info msg="Executing migration" id="Add unique index for dashboard_org_id_title_folder_id"
+logger=migrator t=2024-03-06T09:43:51.110574454Z level=info msg="Executing migration" id="create dashboard_provisioning"
+logger=migrator t=2024-03-06T09:43:51.117394492Z level=info msg="Executing migration" id="Rename table dashboard_provisioning to dashboard_provisioning_tmp_qwerty - v1"
+logger=migrator t=2024-03-06T09:43:51.121677092Z level=info msg="Executing migration" id="create dashboard_provisioning v2"
+logger=migrator t=2024-03-06T09:43:51.124827072Z level=info msg="Executing migration" id="create index IDX_dashboard_provisioning_dashboard_id - v2"
+logger=migrator t=2024-03-06T09:43:51.128084111Z level=info msg="Executing migration" id="create index IDX_dashboard_provisioning_dashboard_id_name - v2"
+logger=migrator t=2024-03-06T09:43:51.137428736Z level=info msg="Executing migration" id="copy dashboard_provisioning v1 to v2"
+logger=migrator t=2024-03-06T09:43:51.140394881Z level=info msg="Executing migration" id="drop dashboard_provisioning_tmp_qwerty"
+logger=migrator t=2024-03-06T09:43:51.146998338Z level=info msg="Executing migration" id="Add check_sum column"
+logger=migrator t=2024-03-06T09:43:51.150236066Z level=info msg="Executing migration" id="Add index for dashboard_title"
+logger=migrator t=2024-03-06T09:43:51.153491812Z level=info msg="Executing migration" id="delete tags for deleted dashboards"
+logger=migrator t=2024-03-06T09:43:51.156617519Z level=info msg="Executing migration" id="delete stars for deleted dashboards"
+logger=migrator t=2024-03-06T09:43:51.159670826Z level=info msg="Executing migration" id="Add index for dashboard_is_folder"
+logger=migrator t=2024-03-06T09:43:51.167608843Z level=info msg="Executing migration" id="Add isPublic for dashboard"
+logger=migrator t=2024-03-06T09:43:51.171118846Z level=info msg="Executing migration" id="create data_source table"
+logger=migrator t=2024-03-06T09:43:51.17742477Z level=info msg="Executing migration" id="add index data_source.account_id"
+logger=migrator t=2024-03-06T09:43:51.18078729Z level=info msg="Executing migration" id="add unique index data_source.account_id_name"
+logger=migrator t=2024-03-06T09:43:51.183859949Z level=info msg="Executing migration" id="drop index IDX_data_source_account_id - v1"
+logger=migrator t=2024-03-06T09:43:51.1874562Z level=info msg="Executing migration" id="drop index UQE_data_source_account_id_name - v1"
+logger=migrator t=2024-03-06T09:43:51.190693215Z level=info msg="Executing migration" id="Rename table data_source to data_source_v1 - v1"
+logger=migrator t=2024-03-06T09:43:51.194458585Z level=info msg="Executing migration" id="create data_source table v2"
+logger=migrator t=2024-03-06T09:43:51.197568439Z level=info msg="Executing migration" id="create index IDX_data_source_org_id - v2"
+logger=migrator t=2024-03-06T09:43:51.207360566Z level=info msg="Executing migration" id="create index UQE_data_source_org_id_name - v2"
+logger=migrator t=2024-03-06T09:43:51.210707347Z level=info msg="Executing migration" id="copy data_source v1 to v2"
+logger=migrator t=2024-03-06T09:43:51.213680352Z level=info msg="Executing migration" id="Drop old table data_source_v1 #2"
+logger=migrator t=2024-03-06T09:43:51.216790907Z level=info msg="Executing migration" id="Add column with_credentials"
+logger=migrator t=2024-03-06T09:43:51.220386288Z level=info msg="Executing migration" id="Add secure json data column"
+logger=migrator t=2024-03-06T09:43:51.227771363Z level=info msg="Executing migration" id="Update data_source table charset"
+logger=migrator t=2024-03-06T09:43:51.230791511Z level=info msg="Executing migration" id="Update initial version to 1"
+logger=migrator t=2024-03-06T09:43:51.23693524Z level=info msg="Executing migration" id="Add read_only data column"
+logger=migrator t=2024-03-06T09:43:51.240123222Z level=info msg="Executing migration" id="Migrate logging ds to loki ds"
+logger=migrator t=2024-03-06T09:43:51.24299788Z level=info msg="Executing migration" id="Update json_data with nulls"
+logger=migrator t=2024-03-06T09:43:51.245940466Z level=info msg="Executing migration" id="Add uid column"
+logger=migrator t=2024-03-06T09:43:51.24910355Z level=info msg="Executing migration" id="Update uid value"
+logger=migrator t=2024-03-06T09:43:51.257335296Z level=info msg="Executing migration" id="Add unique index datasource_org_id_uid"
+logger=migrator t=2024-03-06T09:43:51.260489523Z level=info msg="Executing migration" id="add unique index datasource_org_id_is_default"
+logger=migrator t=2024-03-06T09:43:51.267414987Z level=info msg="Executing migration" id="create api_key table"
+logger=migrator t=2024-03-06T09:43:51.270684851Z level=info msg="Executing migration" id="add index api_key.account_id"
+logger=migrator t=2024-03-06T09:43:51.277343271Z level=info msg="Executing migration" id="add index api_key.key"
+logger=migrator t=2024-03-06T09:43:51.2809944Z level=info msg="Executing migration" id="add index api_key.account_id_name"
+logger=migrator t=2024-03-06T09:43:51.284215348Z level=info msg="Executing migration" id="drop index IDX_api_key_account_id - v1"
+logger=migrator t=2024-03-06T09:43:51.287309497Z level=info msg="Executing migration" id="drop index UQE_api_key_key - v1"
+logger=migrator t=2024-03-06T09:43:51.290439351Z level=info msg="Executing migration" id="drop index UQE_api_key_account_id_name - v1"
+logger=migrator t=2024-03-06T09:43:51.297398078Z level=info msg="Executing migration" id="Rename table api_key to api_key_v1 - v1"
+logger=migrator t=2024-03-06T09:43:51.30131594Z level=info msg="Executing migration" id="create api_key table v2"
+logger=migrator t=2024-03-06T09:43:51.304422546Z level=info msg="Executing migration" id="create index IDX_api_key_org_id - v2"
+logger=migrator t=2024-03-06T09:43:51.307750419Z level=info msg="Executing migration" id="create index UQE_api_key_key - v2"
+logger=migrator t=2024-03-06T09:43:51.317054077Z level=info msg="Executing migration" id="create index UQE_api_key_org_id_name - v2"
+logger=migrator t=2024-03-06T09:43:51.320284051Z level=info msg="Executing migration" id="copy api_key v1 to v2"
+logger=migrator t=2024-03-06T09:43:51.324313096Z level=info msg="Executing migration" id="Drop old table api_key_v1"
+logger=migrator t=2024-03-06T09:43:51.328258366Z level=info msg="Executing migration" id="Update api_key table charset"
+logger=migrator t=2024-03-06T09:43:51.331224537Z level=info msg="Executing migration" id="Add expires to api_key table"
+logger=migrator t=2024-03-06T09:43:51.3379192Z level=info msg="Executing migration" id="Add service account foreign key"
+logger=migrator t=2024-03-06T09:43:51.341182926Z level=info msg="Executing migration" id="set service account foreign key to nil if 0"
+logger=migrator t=2024-03-06T09:43:51.344145312Z level=info msg="Executing migration" id="create dashboard_snapshot table v4"
+logger=migrator t=2024-03-06T09:43:51.347354Z level=info msg="Executing migration" id="drop table dashboard_snapshot_v4 #1"
+logger=migrator t=2024-03-06T09:43:51.350579328Z level=info msg="Executing migration" id="create dashboard_snapshot table v5 #2"
+logger=migrator t=2024-03-06T09:43:51.358368091Z level=info msg="Executing migration" id="create index UQE_dashboard_snapshot_key - v5"
+logger=migrator t=2024-03-06T09:43:51.361743381Z level=info msg="Executing migration" id="create index UQE_dashboard_snapshot_delete_key - v5"
+logger=migrator t=2024-03-06T09:43:51.365194211Z level=info msg="Executing migration" id="create index IDX_dashboard_snapshot_user_id - v5"
+logger=migrator t=2024-03-06T09:43:51.368262945Z level=info msg="Executing migration" id="alter dashboard_snapshot to mediumtext v2"
+logger=migrator t=2024-03-06T09:43:51.377083941Z level=info msg="Executing migration" id="Update dashboard_snapshot table charset"
+logger=migrator t=2024-03-06T09:43:51.379983922Z level=info msg="Executing migration" id="Add column external_delete_url to dashboard_snapshots table"
+logger=migrator t=2024-03-06T09:43:51.383422107Z level=info msg="Executing migration" id="Add encrypted dashboard json column"
+logger=migrator t=2024-03-06T09:43:51.386685992Z level=info msg="Executing migration" id="Change dashboard_encrypted column to MEDIUMBLOB"
+logger=migrator t=2024-03-06T09:43:51.389604459Z level=info msg="Executing migration" id="create quota table v1"
+logger=migrator t=2024-03-06T09:43:51.396983582Z level=info msg="Executing migration" id="create index UQE_quota_org_id_user_id_target - v1"
+logger=migrator t=2024-03-06T09:43:51.400103533Z level=info msg="Executing migration" id="Update quota table charset"
+logger=migrator t=2024-03-06T09:43:51.402954978Z level=info msg="Executing migration" id="create plugin_setting table"
+logger=migrator t=2024-03-06T09:43:51.40617227Z level=info msg="Executing migration" id="create index UQE_plugin_setting_org_id_plugin_id - v1"
+logger=migrator t=2024-03-06T09:43:51.409319218Z level=info msg="Executing migration" id="Add column plugin_version to plugin_settings"
+logger=migrator t=2024-03-06T09:43:51.417899184Z level=info msg="Executing migration" id="Update plugin_setting table charset"
+logger=migrator t=2024-03-06T09:43:51.420877396Z level=info msg="Executing migration" id="create session table"
+logger=migrator t=2024-03-06T09:43:51.427435907Z level=info msg="Executing migration" id="Drop old table playlist table"
+logger=migrator t=2024-03-06T09:43:51.430446334Z level=info msg="Executing migration" id="Drop old table playlist_item table"
+logger=migrator t=2024-03-06T09:43:51.433328712Z level=info msg="Executing migration" id="create playlist table v2"
+logger=migrator t=2024-03-06T09:43:51.436678593Z level=info msg="Executing migration" id="create playlist item table v2"
+logger=migrator t=2024-03-06T09:43:51.439790713Z level=info msg="Executing migration" id="Update playlist table charset"
+logger=migrator t=2024-03-06T09:43:51.449079606Z level=info msg="Executing migration" id="Update playlist_item table charset"
+logger=migrator t=2024-03-06T09:43:51.452186212Z level=info msg="Executing migration" id="drop preferences table v2"
+logger=migrator t=2024-03-06T09:43:51.455229353Z level=info msg="Executing migration" id="drop preferences table v3"
+logger=migrator t=2024-03-06T09:43:51.459195889Z level=info msg="Executing migration" id="create preferences table v3"
+logger=migrator t=2024-03-06T09:43:51.467421928Z level=info msg="Executing migration" id="Update preferences table charset"
+logger=migrator t=2024-03-06T09:43:51.471554892Z level=info msg="Executing migration" id="Add column team_id in preferences"
+logger=migrator t=2024-03-06T09:43:51.474885598Z level=info msg="Executing migration" id="Update team_id column values in preferences"
+logger=migrator t=2024-03-06T09:43:51.479792761Z level=info msg="Executing migration" id="Add column week_start in preferences"
+logger=migrator t=2024-03-06T09:43:51.48656491Z level=info msg="Executing migration" id="Add column preferences.json_data"
+logger=migrator t=2024-03-06T09:43:51.490245154Z level=info msg="Executing migration" id="alter preferences.json_data to mediumtext v1"
+logger=migrator t=2024-03-06T09:43:51.494290506Z level=info msg="Executing migration" id="create alert table v1"
+logger=migrator t=2024-03-06T09:43:51.497698199Z level=info msg="Executing migration" id="add index alert org_id & id "
+logger=migrator t=2024-03-06T09:43:51.500955879Z level=info msg="Executing migration" id="add index alert state"
+logger=migrator t=2024-03-06T09:43:51.507846087Z level=info msg="Executing migration" id="add index alert dashboard_id"
+logger=migrator t=2024-03-06T09:43:51.51102191Z level=info msg="Executing migration" id="Create alert_rule_tag table v1"
+logger=migrator t=2024-03-06T09:43:51.5184477Z level=info msg="Executing migration" id="Add unique index alert_rule_tag.alert_id_tag_id"
+logger=migrator t=2024-03-06T09:43:51.521558026Z level=info msg="Executing migration" id="drop index UQE_alert_rule_tag_alert_id_tag_id - v1"
+logger=migrator t=2024-03-06T09:43:51.528359458Z level=info msg="Executing migration" id="Rename table alert_rule_tag to alert_rule_tag_v1 - v1"
+logger=migrator t=2024-03-06T09:43:51.533049607Z level=info msg="Executing migration" id="Create alert_rule_tag table v2"
+logger=migrator t=2024-03-06T09:43:51.536468835Z level=info msg="Executing migration" id="create index UQE_alert_rule_tag_alert_id_tag_id - Add unique index alert_rule_tag.alert_id_tag_id V2"
+logger=migrator t=2024-03-06T09:43:51.539646225Z level=info msg="Executing migration" id="copy alert_rule_tag v1 to v2"
+logger=migrator t=2024-03-06T09:43:51.547522499Z level=info msg="Executing migration" id="drop table alert_rule_tag_v1"
+logger=migrator t=2024-03-06T09:43:51.550736073Z level=info msg="Executing migration" id="create alert_notification table v1"
+logger=migrator t=2024-03-06T09:43:51.554006788Z level=info msg="Executing migration" id="Add column is_default"
+logger=migrator t=2024-03-06T09:43:51.5573948Z level=info msg="Executing migration" id="Add column frequency"
+logger=migrator t=2024-03-06T09:43:51.56082597Z level=info msg="Executing migration" id="Add column send_reminder"
+logger=migrator t=2024-03-06T09:43:51.567348296Z level=info msg="Executing migration" id="Add column disable_resolve_message"
+logger=migrator t=2024-03-06T09:43:51.570922304Z level=info msg="Executing migration" id="add index alert_notification org_id & name"
+logger=migrator t=2024-03-06T09:43:51.577435629Z level=info msg="Executing migration" id="Update alert table charset"
+logger=migrator t=2024-03-06T09:43:51.580349542Z level=info msg="Executing migration" id="Update alert_notification table charset"
+logger=migrator t=2024-03-06T09:43:51.583308729Z level=info msg="Executing migration" id="create notification_journal table v1"
+logger=migrator t=2024-03-06T09:43:51.586545561Z level=info msg="Executing migration" id="add index notification_journal org_id & alert_id & notifier_id"
+logger=migrator t=2024-03-06T09:43:51.591145549Z level=info msg="Executing migration" id="drop alert_notification_journal"
+logger=migrator t=2024-03-06T09:43:51.598347851Z level=info msg="Executing migration" id="create alert_notification_state table v1"
+logger=migrator t=2024-03-06T09:43:51.601519811Z level=info msg="Executing migration" id="add index alert_notification_state org_id & alert_id & notifier_id"
+logger=migrator t=2024-03-06T09:43:51.604671477Z level=info msg="Executing migration" id="Add for to alert table"
+logger=migrator t=2024-03-06T09:43:51.608057131Z level=info msg="Executing migration" id="Add column uid in alert_notification"
+logger=migrator t=2024-03-06T09:43:51.616515866Z level=info msg="Executing migration" id="Update uid column values in alert_notification"
+logger=migrator t=2024-03-06T09:43:51.619813092Z level=info msg="Executing migration" id="Add unique index alert_notification_org_id_uid"
+logger=migrator t=2024-03-06T09:43:51.62295964Z level=info msg="Executing migration" id="Remove unique index org_id_name"
+logger=migrator t=2024-03-06T09:43:51.626278502Z level=info msg="Executing migration" id="Add column secure_settings in alert_notification"
+logger=migrator t=2024-03-06T09:43:51.630412974Z level=info msg="Executing migration" id="alter alert.settings to mediumtext"
+logger=migrator t=2024-03-06T09:43:51.637354803Z level=info msg="Executing migration" id="Add non-unique index alert_notification_state_alert_id"
+logger=migrator t=2024-03-06T09:43:51.640544545Z level=info msg="Executing migration" id="Add non-unique index alert_rule_tag_alert_id"
+logger=migrator t=2024-03-06T09:43:51.647323672Z level=info msg="Executing migration" id="Drop old annotation table v4"
+logger=migrator t=2024-03-06T09:43:51.650257009Z level=info msg="Executing migration" id="create annotation table v5"
+logger=migrator t=2024-03-06T09:43:51.656988593Z level=info msg="Executing migration" id="add index annotation 0 v3"
+logger=migrator t=2024-03-06T09:43:51.660360602Z level=info msg="Executing migration" id="add index annotation 1 v3"
+logger=migrator t=2024-03-06T09:43:51.666977242Z level=info msg="Executing migration" id="add index annotation 2 v3"
+logger=migrator t=2024-03-06T09:43:51.670351113Z level=info msg="Executing migration" id="add index annotation 3 v3"
+logger=migrator t=2024-03-06T09:43:51.673582925Z level=info msg="Executing migration" id="add index annotation 4 v3"
+logger=migrator t=2024-03-06T09:43:51.676794048Z level=info msg="Executing migration" id="Update annotation table charset"
+logger=migrator t=2024-03-06T09:43:51.679727008Z level=info msg="Executing migration" id="Add column region_id to annotation table"
+logger=migrator t=2024-03-06T09:43:51.688194305Z level=info msg="Executing migration" id="Drop category_id index"
+logger=migrator t=2024-03-06T09:43:51.691308925Z level=info msg="Executing migration" id="Add column tags to annotation table"
+logger=migrator t=2024-03-06T09:43:51.695041842Z level=info msg="Executing migration" id="Create annotation_tag table v2"
+logger=migrator t=2024-03-06T09:43:51.698412303Z level=info msg="Executing migration" id="Add unique index annotation_tag.annotation_id_tag_id"
+logger=migrator t=2024-03-06T09:43:51.706519392Z level=info msg="Executing migration" id="drop index UQE_annotation_tag_annotation_id_tag_id - v2"
+logger=migrator t=2024-03-06T09:43:51.711139863Z level=info msg="Executing migration" id="Rename table annotation_tag to annotation_tag_v2 - v2"
+logger=migrator t=2024-03-06T09:43:51.715859584Z level=info msg="Executing migration" id="Create annotation_tag table v3"
+logger=migrator t=2024-03-06T09:43:51.71887347Z level=info msg="Executing migration" id="create index UQE_annotation_tag_annotation_id_tag_id - Add unique index annotation_tag.annotation_id_tag_id V3"
+logger=migrator t=2024-03-06T09:43:51.727403902Z level=info msg="Executing migration" id="copy annotation_tag v2 to v3"
+logger=migrator t=2024-03-06T09:43:51.730363474Z level=info msg="Executing migration" id="drop table annotation_tag_v2"
+logger=migrator t=2024-03-06T09:43:51.736921561Z level=info msg="Executing migration" id="Update alert annotations and set TEXT to empty"
+logger=migrator t=2024-03-06T09:43:51.739824486Z level=info msg="Executing migration" id="Add created time to annotation table"
+logger=migrator t=2024-03-06T09:43:51.74318906Z level=info msg="Executing migration" id="Add updated time to annotation table"
+logger=migrator t=2024-03-06T09:43:51.746476663Z level=info msg="Executing migration" id="Add index for created in annotation table"
+logger=migrator t=2024-03-06T09:43:51.749581472Z level=info msg="Executing migration" id="Add index for updated in annotation table"
+logger=migrator t=2024-03-06T09:43:51.75801858Z level=info msg="Executing migration" id="Convert existing annotations from seconds to milliseconds"
+logger=migrator t=2024-03-06T09:43:51.761778534Z level=info msg="Executing migration" id="Add epoch_end column"
+logger=migrator t=2024-03-06T09:43:51.765142061Z level=info msg="Executing migration" id="Add index for epoch_end"
+logger=migrator t=2024-03-06T09:43:51.768315924Z level=info msg="Executing migration" id="Make epoch_end the same as epoch"
+logger=migrator t=2024-03-06T09:43:51.777404518Z level=info msg="Executing migration" id="Move region to single row"
+logger=migrator t=2024-03-06T09:43:51.780519536Z level=info msg="Executing migration" id="Remove index org_id_epoch from annotation table"
+logger=migrator t=2024-03-06T09:43:51.783582067Z level=info msg="Executing migration" id="Remove index org_id_dashboard_id_panel_id_epoch from annotation table"
+logger=migrator t=2024-03-06T09:43:51.786922863Z level=info msg="Executing migration" id="Add index for org_id_dashboard_id_epoch_end_epoch on annotation table"
+logger=migrator t=2024-03-06T09:43:51.790271106Z level=info msg="Executing migration" id="Add index for org_id_epoch_end_epoch on annotation table"
+logger=migrator t=2024-03-06T09:43:51.79744965Z level=info msg="Executing migration" id="Remove index org_id_epoch_epoch_end from annotation table"
+logger=migrator t=2024-03-06T09:43:51.800904659Z level=info msg="Executing migration" id="Add index for alert_id on annotation table"
+logger=migrator t=2024-03-06T09:43:51.807301372Z level=info msg="Executing migration" id="create test_data table"
+logger=migrator t=2024-03-06T09:43:51.81049435Z level=info msg="Executing migration" id="create dashboard_version table v1"
+logger=migrator t=2024-03-06T09:43:51.813798634Z level=info msg="Executing migration" id="add index dashboard_version.dashboard_id"
+logger=migrator t=2024-03-06T09:43:51.817072982Z level=info msg="Executing migration" id="add unique index dashboard_version.dashboard_id and dashboard_version.version"
+logger=migrator t=2024-03-06T09:43:51.820278398Z level=info msg="Executing migration" id="Set dashboard version to 1 where 0"
+logger=migrator t=2024-03-06T09:43:51.828259166Z level=info msg="Executing migration" id="save existing dashboard data in dashboard_version table v1"
+logger=migrator t=2024-03-06T09:43:51.831255558Z level=info msg="Executing migration" id="alter dashboard_version.data to mediumtext v1"
+logger=migrator t=2024-03-06T09:43:51.8342203Z level=info msg="Executing migration" id="create team table"
+logger=migrator t=2024-03-06T09:43:51.838375552Z level=info msg="Executing migration" id="add index team.org_id"
+logger=migrator t=2024-03-06T09:43:51.847406333Z level=info msg="Executing migration" id="add unique index team_org_id_name"
+logger=migrator t=2024-03-06T09:43:51.851470587Z level=info msg="Executing migration" id="create team member table"
+logger=migrator t=2024-03-06T09:43:51.855690959Z level=info msg="Executing migration" id="add index team_member.org_id"
+logger=migrator t=2024-03-06T09:43:51.859887116Z level=info msg="Executing migration" id="add unique index team_member_org_id_team_id_user_id"
+logger=migrator t=2024-03-06T09:43:51.867969418Z level=info msg="Executing migration" id="add index team_member.team_id"
+logger=migrator t=2024-03-06T09:43:51.876499734Z level=info msg="Executing migration" id="Add column email to team table"
+logger=migrator t=2024-03-06T09:43:51.882309618Z level=info msg="Executing migration" id="Add column external to team_member table"
+logger=migrator t=2024-03-06T09:43:51.885801032Z level=info msg="Executing migration" id="Add column permission to team_member table"
+logger=migrator t=2024-03-06T09:43:51.889387028Z level=info msg="Executing migration" id="create dashboard acl table"
+logger=migrator t=2024-03-06T09:43:51.897310824Z level=info msg="Executing migration" id="add index dashboard_acl_dashboard_id"
+logger=migrator t=2024-03-06T09:43:51.900826416Z level=info msg="Executing migration" id="add unique index dashboard_acl_dashboard_id_user_id"
+logger=migrator t=2024-03-06T09:43:51.907539943Z level=info msg="Executing migration" id="add unique index dashboard_acl_dashboard_id_team_id"
+logger=migrator t=2024-03-06T09:43:51.910813217Z level=info msg="Executing migration" id="add index dashboard_acl_user_id"
+logger=migrator t=2024-03-06T09:43:51.91748731Z level=info msg="Executing migration" id="add index dashboard_acl_team_id"
+logger=migrator t=2024-03-06T09:43:51.922891704Z level=info msg="Executing migration" id="add index dashboard_acl_org_id_role"
+logger=migrator t=2024-03-06T09:43:51.926071362Z level=info msg="Executing migration" id="add index dashboard_permission"
+logger=migrator t=2024-03-06T09:43:51.930417335Z level=info msg="Executing migration" id="save default acl rules in dashboard_acl table"
+logger=migrator t=2024-03-06T09:43:51.938431797Z level=info msg="Executing migration" id="delete acl rules for deleted dashboards and folders"
+logger=migrator t=2024-03-06T09:43:51.941394343Z level=info msg="Executing migration" id="create tag table"
+logger=migrator t=2024-03-06T09:43:51.944677186Z level=info msg="Executing migration" id="add index tag.key_value"
+logger=migrator t=2024-03-06T09:43:51.948941852Z level=info msg="Executing migration" id="create login attempt table"
+logger=migrator t=2024-03-06T09:43:51.957393476Z level=info msg="Executing migration" id="add index login_attempt.username"
+logger=migrator t=2024-03-06T09:43:51.960742244Z level=info msg="Executing migration" id="drop index IDX_login_attempt_username - v1"
+logger=migrator t=2024-03-06T09:43:51.96727344Z level=info msg="Executing migration" id="Rename table login_attempt to login_attempt_tmp_qwerty - v1"
+logger=migrator t=2024-03-06T09:43:51.972571187Z level=info msg="Executing migration" id="create login_attempt v2"
+logger=migrator t=2024-03-06T09:43:51.975681855Z level=info msg="Executing migration" id="create index IDX_login_attempt_username - v2"
+logger=migrator t=2024-03-06T09:43:51.978975294Z level=info msg="Executing migration" id="copy login_attempt v1 to v2"
+logger=migrator t=2024-03-06T09:43:51.987269976Z level=info msg="Executing migration" id="drop login_attempt_tmp_qwerty"
+logger=migrator t=2024-03-06T09:43:51.990484412Z level=info msg="Executing migration" id="create user auth table"
+logger=migrator t=2024-03-06T09:43:51.997212574Z level=info msg="Executing migration" id="create index IDX_user_auth_auth_module_auth_id - v1"
+logger=migrator t=2024-03-06T09:43:52.000703505Z level=info msg="Executing migration" id="alter user_auth.auth_id to length 190"
+logger=migrator t=2024-03-06T09:43:52.003722949Z level=info msg="Executing migration" id="Add OAuth access token to user_auth"
+logger=migrator t=2024-03-06T09:43:52.00721382Z level=info msg="Executing migration" id="Add OAuth refresh token to user_auth"
+logger=migrator t=2024-03-06T09:43:52.011073673Z level=info msg="Executing migration" id="Add OAuth token type to user_auth"
+logger=migrator t=2024-03-06T09:43:52.017771013Z level=info msg="Executing migration" id="Add OAuth expiry to user_auth"
+logger=migrator t=2024-03-06T09:43:52.021513238Z level=info msg="Executing migration" id="Add index to user_id column in user_auth"
+logger=migrator t=2024-03-06T09:43:52.024840632Z level=info msg="Executing migration" id="Add OAuth ID token to user_auth"
+logger=migrator t=2024-03-06T09:43:52.028461884Z level=info msg="Executing migration" id="create server_lock table"
+logger=migrator t=2024-03-06T09:43:52.037311081Z level=info msg="Executing migration" id="add index server_lock.operation_uid"
+logger=migrator t=2024-03-06T09:43:52.040718637Z level=info msg="Executing migration" id="create user auth token table"
+logger=migrator t=2024-03-06T09:43:52.044674124Z level=info msg="Executing migration" id="add unique index user_auth_token.auth_token"
+logger=migrator t=2024-03-06T09:43:52.047960986Z level=info msg="Executing migration" id="add unique index user_auth_token.prev_auth_token"
+logger=migrator t=2024-03-06T09:43:52.057474803Z level=info msg="Executing migration" id="add index user_auth_token.user_id"
+logger=migrator t=2024-03-06T09:43:52.06093245Z level=info msg="Executing migration" id="Add revoked_at to the user auth token"
+logger=migrator t=2024-03-06T09:43:52.064692959Z level=info msg="Executing migration" id="create cache_data table"
+logger=migrator t=2024-03-06T09:43:52.067879296Z level=info msg="Executing migration" id="add unique index cache_data.cache_key"
+logger=migrator t=2024-03-06T09:43:52.077318765Z level=info msg="Executing migration" id="create short_url table v1"
+logger=migrator t=2024-03-06T09:43:52.080650834Z level=info msg="Executing migration" id="add index short_url.org_id-uid"
+logger=migrator t=2024-03-06T09:43:52.087333569Z level=info msg="Executing migration" id="delete alert_definition table"
+logger=migrator t=2024-03-06T09:43:52.090350696Z level=info msg="Executing migration" id="recreate alert_definition table"
+logger=migrator t=2024-03-06T09:43:52.097322043Z level=info msg="Executing migration" id="add index in alert_definition on org_id and title columns"
+logger=migrator t=2024-03-06T09:43:52.101266641Z level=info msg="Executing migration" id="add index in alert_definition on org_id and uid columns"
+logger=migrator t=2024-03-06T09:43:52.108677532Z level=info msg="Executing migration" id="alter alert_definition table data column to mediumtext in mysql"
+logger=migrator t=2024-03-06T09:43:52.112407421Z level=info msg="Executing migration" id="drop index in alert_definition on org_id and title columns"
+logger=migrator t=2024-03-06T09:43:52.115688908Z level=info msg="Executing migration" id="drop index in alert_definition on org_id and uid columns"
+logger=migrator t=2024-03-06T09:43:52.118922892Z level=info msg="Executing migration" id="add unique index in alert_definition on org_id and title columns"
+logger=migrator t=2024-03-06T09:43:52.126462085Z level=info msg="Executing migration" id="add unique index in alert_definition on org_id and uid columns"
+logger=migrator t=2024-03-06T09:43:52.129692096Z level=info msg="Executing migration" id="Add column paused in alert_definition"
+logger=migrator t=2024-03-06T09:43:52.133477848Z level=info msg="Executing migration" id="drop alert_definition table"
+logger=migrator t=2024-03-06T09:43:52.136851735Z level=info msg="Executing migration" id="delete alert_definition_version table"
+logger=migrator t=2024-03-06T09:43:52.140739272Z level=info msg="Executing migration" id="recreate alert_definition_version table"
+logger=migrator t=2024-03-06T09:43:52.147348051Z level=info msg="Executing migration" id="add index in alert_definition_version table on alert_definition_id and version columns"
+logger=migrator t=2024-03-06T09:43:52.150509123Z level=info msg="Executing migration" id="add index in alert_definition_version table on alert_definition_uid and version columns"
+logger=migrator t=2024-03-06T09:43:52.156872708Z level=info msg="Executing migration" id="alter alert_definition_version table data column to mediumtext in mysql"
+logger=migrator t=2024-03-06T09:43:52.159873206Z level=info msg="Executing migration" id="drop alert_definition_version table"
+logger=migrator t=2024-03-06T09:43:52.163536707Z level=info msg="Executing migration" id="create alert_instance table"
+logger=migrator t=2024-03-06T09:43:52.167050057Z level=info msg="Executing migration" id="add index in alert_instance table on def_org_id, def_uid and current_state columns"
+logger=migrator t=2024-03-06T09:43:52.170199251Z level=info msg="Executing migration" id="add index in alert_instance table on def_org_id, current_state columns"
+logger=migrator t=2024-03-06T09:43:52.177352423Z level=info msg="Executing migration" id="add column current_state_end to alert_instance"
+logger=migrator t=2024-03-06T09:43:52.181041383Z level=info msg="Executing migration" id="remove index def_org_id, def_uid, current_state on alert_instance"
+logger=migrator t=2024-03-06T09:43:52.184330345Z level=info msg="Executing migration" id="remove index def_org_id, current_state on alert_instance"
+logger=migrator t=2024-03-06T09:43:52.187527134Z level=info msg="Executing migration" id="rename def_org_id to rule_org_id in alert_instance"
+logger=migrator t=2024-03-06T09:43:52.193316724Z level=info msg="Executing migration" id="rename def_uid to rule_uid in alert_instance"
+logger=migrator t=2024-03-06T09:43:52.198931098Z level=info msg="Executing migration" id="add index rule_org_id, rule_uid, current_state on alert_instance"
+logger=migrator t=2024-03-06T09:43:52.202135604Z level=info msg="Executing migration" id="add index rule_org_id, current_state on alert_instance"
+logger=migrator t=2024-03-06T09:43:52.205740812Z level=info msg="Executing migration" id="add current_reason column related to current_state"
+logger=migrator t=2024-03-06T09:43:52.209496477Z level=info msg="Executing migration" id="create alert_rule table"
+logger=migrator t=2024-03-06T09:43:52.216948169Z level=info msg="Executing migration" id="add index in alert_rule on org_id and title columns"
+logger=migrator t=2024-03-06T09:43:52.220225255Z level=info msg="Executing migration" id="add index in alert_rule on org_id and uid columns"
+logger=migrator t=2024-03-06T09:43:52.224818003Z level=info msg="Executing migration" id="add index in alert_rule on org_id, namespace_uid, group_uid columns"
+logger=migrator t=2024-03-06T09:43:52.228138616Z level=info msg="Executing migration" id="alter alert_rule table data column to mediumtext in mysql"
+logger=migrator t=2024-03-06T09:43:52.232069911Z level=info msg="Executing migration" id="add column for to alert_rule"
+logger=migrator t=2024-03-06T09:43:52.236058905Z level=info msg="Executing migration" id="add column annotations to alert_rule"
+logger=migrator t=2024-03-06T09:43:52.239837626Z level=info msg="Executing migration" id="add column labels to alert_rule"
+logger=migrator t=2024-03-06T09:43:52.247232669Z level=info msg="Executing migration" id="remove unique index from alert_rule on org_id, title columns"
+logger=migrator t=2024-03-06T09:43:52.250668115Z level=info msg="Executing migration" id="add index in alert_rule on org_id, namespase_uid and title columns"
+logger=migrator t=2024-03-06T09:43:52.258231097Z level=info msg="Executing migration" id="add dashboard_uid column to alert_rule"
+logger=migrator t=2024-03-06T09:43:52.262164421Z level=info msg="Executing migration" id="add panel_id column to alert_rule"
+logger=migrator t=2024-03-06T09:43:52.265916532Z level=info msg="Executing migration" id="add index in alert_rule on org_id, dashboard_uid and panel_id columns"
+logger=migrator t=2024-03-06T09:43:52.269201173Z level=info msg="Executing migration" id="create alert_rule_version table"
+logger=migrator t=2024-03-06T09:43:52.279466348Z level=info msg="Executing migration" id="add index in alert_rule_version table on rule_org_id, rule_uid and version columns"
+logger=migrator t=2024-03-06T09:43:52.282718835Z level=info msg="Executing migration" id="add index in alert_rule_version table on rule_org_id, rule_namespace_uid and rule_group columns"
+logger=migrator t=2024-03-06T09:43:52.286430349Z level=info msg="Executing migration" id="alter alert_rule_version table data column to mediumtext in mysql"
+logger=migrator t=2024-03-06T09:43:52.289400924Z level=info msg="Executing migration" id="add column for to alert_rule_version"
+logger=migrator t=2024-03-06T09:43:52.299256104Z level=info msg="Executing migration" id="add column annotations to alert_rule_version"
+logger=migrator t=2024-03-06T09:43:52.303071571Z level=info msg="Executing migration" id="add column labels to alert_rule_version"
+logger=migrator t=2024-03-06T09:43:52.306722559Z level=info msg="Executing migration" id=create_alert_configuration_table
+logger=migrator t=2024-03-06T09:43:52.310625281Z level=info msg="Executing migration" id="Add column default in alert_configuration"
+logger=migrator t=2024-03-06T09:43:52.319283543Z level=info msg="Executing migration" id="alert alert_configuration alertmanager_configuration column from TEXT to MEDIUMTEXT if mysql"
+logger=migrator t=2024-03-06T09:43:52.323620527Z level=info msg="Executing migration" id="add column org_id in alert_configuration"
+logger=migrator t=2024-03-06T09:43:52.329266645Z level=info msg="Executing migration" id="add index in alert_configuration table on org_id column"
+logger=migrator t=2024-03-06T09:43:52.338923961Z level=info msg="Executing migration" id="add configuration_hash column to alert_configuration"
+logger=migrator t=2024-03-06T09:43:52.343876959Z level=info msg="Executing migration" id=create_ngalert_configuration_table
+logger=migrator t=2024-03-06T09:43:52.3471191Z level=info msg="Executing migration" id="add index in ngalert_configuration on org_id column"
+logger=migrator t=2024-03-06T09:43:52.350406339Z level=info msg="Executing migration" id="add column send_alerts_to in ngalert_configuration"
+logger=migrator t=2024-03-06T09:43:52.359364121Z level=info msg="Executing migration" id="create provenance_type table"
+logger=migrator t=2024-03-06T09:43:52.362668686Z level=info msg="Executing migration" id="add index to uniquify (record_key, record_type, org_id) columns"
+logger=migrator t=2024-03-06T09:43:52.365960389Z level=info msg="Executing migration" id="create alert_image table"
+logger=migrator t=2024-03-06T09:43:52.369120091Z level=info msg="Executing migration" id="add unique index on token to alert_image table"
+logger=migrator t=2024-03-06T09:43:52.379359652Z level=info msg="Executing migration" id="clear migration entry \"remove unified alerting data\""
+logger=migrator t=2024-03-06T09:43:52.379620007Z level=info msg="Executing migration" id="move dashboard alerts to unified alerting"
+logger=migrator t=2024-03-06T09:43:52.379850586Z level=info msg="alerts found to migrate" alerts=0
+logger=migrator t=2024-03-06T09:43:52.383077667Z level=info msg="Executing migration" id="create library_element table v1"
+logger=migrator t=2024-03-06T09:43:52.386470838Z level=info msg="Executing migration" id="add index library_element org_id-folder_id-name-kind"
+logger=migrator t=2024-03-06T09:43:52.389766013Z level=info msg="Executing migration" id="create library_element_connection table v1"
+logger=migrator t=2024-03-06T09:43:52.399374608Z level=info msg="Executing migration" id="add index library_element_connection element_id-kind-connection_id"
+logger=migrator t=2024-03-06T09:43:52.402698876Z level=info msg="Executing migration" id="add unique index library_element org_id_uid"
+logger=migrator t=2024-03-06T09:43:52.406065774Z level=info msg="Executing migration" id="increase max description length to 2048"
+logger=migrator t=2024-03-06T09:43:52.408999074Z level=info msg="Executing migration" id="clone move dashboard alerts to unified alerting"
+logger=migrator t=2024-03-06T09:43:52.41849318Z level=info msg="Executing migration" id="create data_keys table"
+logger=migrator t=2024-03-06T09:43:52.422088836Z level=info msg="Executing migration" id="create secrets table"
+logger=migrator t=2024-03-06T09:43:52.425904352Z level=info msg="Executing migration" id="rename data_keys name column to id"
+logger=migrator t=2024-03-06T09:43:52.432120889Z level=info msg="Executing migration" id="add name column into data_keys"
+logger=migrator t=2024-03-06T09:43:52.436333534Z level=info msg="Executing migration" id="copy data_keys id column values into name"
+logger=migrator t=2024-03-06T09:43:52.439426803Z level=info msg="Executing migration" id="rename data_keys name column to label"
+logger=migrator t=2024-03-06T09:43:52.44592881Z level=info msg="Executing migration" id="rename data_keys id column back to name"
+logger=migrator t=2024-03-06T09:43:52.451833936Z level=info msg="Executing migration" id="create kv_store table v1"
+logger=migrator t=2024-03-06T09:43:52.459354016Z level=info msg="Executing migration" id="add index kv_store.org_id-namespace-key"
+logger=migrator t=2024-03-06T09:43:52.462778779Z level=info msg="Executing migration" id="update dashboard_uid and panel_id from existing annotations"
+logger=migrator t=2024-03-06T09:43:52.46776837Z level=info msg="Executing migration" id="create permission table"
+logger=migrator t=2024-03-06T09:43:52.470991736Z level=info msg="Executing migration" id="add unique index permission.role_id"
+logger=migrator t=2024-03-06T09:43:52.479273852Z level=info msg="Executing migration" id="add unique index role_id_action_scope"
+logger=migrator t=2024-03-06T09:43:52.482501994Z level=info msg="Executing migration" id="create role table"
+logger=migrator t=2024-03-06T09:43:52.486037791Z level=info msg="Executing migration" id="add column display_name"
+logger=migrator t=2024-03-06T09:43:52.48995656Z level=info msg="Executing migration" id="add column group_name"
+logger=migrator t=2024-03-06T09:43:52.498946899Z level=info msg="Executing migration" id="add index role.org_id"
+logger=migrator t=2024-03-06T09:43:52.503533431Z level=info msg="Executing migration" id="add unique index role_org_id_name"
+logger=migrator t=2024-03-06T09:43:52.507605186Z level=info msg="Executing migration" id="add index role_org_id_uid"
+logger=migrator t=2024-03-06T09:43:52.510856986Z level=info msg="Executing migration" id="create team role table"
+logger=migrator t=2024-03-06T09:43:52.519305765Z level=info msg="Executing migration" id="add index team_role.org_id"
+logger=migrator t=2024-03-06T09:43:52.522667504Z level=info msg="Executing migration" id="add unique index team_role_org_id_team_id_role_id"
+logger=migrator t=2024-03-06T09:43:52.525933879Z level=info msg="Executing migration" id="add index team_role.team_id"
+logger=migrator t=2024-03-06T09:43:52.529193127Z level=info msg="Executing migration" id="create user role table"
+logger=migrator t=2024-03-06T09:43:52.539352808Z level=info msg="Executing migration" id="add index user_role.org_id"
+logger=migrator t=2024-03-06T09:43:52.542784619Z level=info msg="Executing migration" id="add unique index user_role_org_id_user_id_role_id"
+logger=migrator t=2024-03-06T09:43:52.54597139Z level=info msg="Executing migration" id="add index user_role.user_id"
+logger=migrator t=2024-03-06T09:43:52.549583454Z level=info msg="Executing migration" id="create builtin role table"
+logger=migrator t=2024-03-06T09:43:52.559315515Z level=info msg="Executing migration" id="add index builtin_role.role_id"
+logger=migrator t=2024-03-06T09:43:52.562850367Z level=info msg="Executing migration" id="add index builtin_role.name"
+logger=migrator t=2024-03-06T09:43:52.566773172Z level=info msg="Executing migration" id="Add column org_id to builtin_role table"
+logger=migrator t=2024-03-06T09:43:52.570991182Z level=info msg="Executing migration" id="add index builtin_role.org_id"
+logger=migrator t=2024-03-06T09:43:52.579346491Z level=info msg="Executing migration" id="add unique index builtin_role_org_id_role_id_role"
+logger=migrator t=2024-03-06T09:43:52.582716677Z level=info msg="Executing migration" id="Remove unique index role_org_id_uid"
+logger=migrator t=2024-03-06T09:43:52.586009344Z level=info msg="Executing migration" id="add unique index role.uid"
+logger=migrator t=2024-03-06T09:43:52.589100763Z level=info msg="Executing migration" id="create seed assignment table"
+logger=migrator t=2024-03-06T09:43:52.599245993Z level=info msg="Executing migration" id="add unique index builtin_role_role_name"
+logger=migrator t=2024-03-06T09:43:52.602499183Z level=info msg="Executing migration" id="add column hidden to role table"
+logger=migrator t=2024-03-06T09:43:52.606584773Z level=info msg="Executing migration" id="create query_history table v1"
+logger=migrator t=2024-03-06T09:43:52.609892915Z level=info msg="Executing migration" id="add index query_history.org_id-created_by-datasource_uid"
+logger=migrator t=2024-03-06T09:43:52.619315747Z level=info msg="Executing migration" id="teams permissions migration"
+logger=migrator t=2024-03-06T09:43:52.624529017Z level=info msg="Executing migration" id="dashboard permissions"
+logger=migrator t=2024-03-06T09:43:52.628518911Z level=info msg="Executing migration" id="dashboard permissions uid scopes"
+logger=migrator t=2024-03-06T09:43:52.631714183Z level=info msg="Executing migration" id="drop managed folder create actions"
+logger=migrator t=2024-03-06T09:43:52.639185504Z level=info msg="Executing migration" id="alerting notification permissions"
+logger=migrator t=2024-03-06T09:43:52.642191174Z level=info msg="Executing migration" id="create query_history_star table v1"
+logger=migrator t=2024-03-06T09:43:52.645490575Z level=info msg="Executing migration" id="add index query_history.user_id-query_uid"
+logger=migrator t=2024-03-06T09:43:52.648691006Z level=info msg="Executing migration" id="add column org_id in query_history_star"
+logger=migrator t=2024-03-06T09:43:52.658851262Z level=info msg="Executing migration" id="create entity_events table"
+logger=migrator t=2024-03-06T09:43:52.662709569Z level=info msg="Executing migration" id="create dashboard public config v1"
+logger=migrator t=2024-03-06T09:43:52.6659396Z level=info msg="Executing migration" id="create index UQE_dashboard_public_config_uid - v1"
+logger=migrator t=2024-03-06T09:43:52.669344746Z level=info msg="Executing migration" id="create index IDX_dashboard_public_config_org_id_dashboard_uid - v1"
+logger=migrator t=2024-03-06T09:43:52.679314263Z level=info msg="Executing migration" id="create default alerting folders"
+logger=migrator t=2024-03-06T09:43:52.682767118Z level=info msg="Executing migration" id="create file table"
+logger=migrator t=2024-03-06T09:43:52.686162465Z level=info msg="Executing migration" id="file table idx: path natural pk"
+logger=migrator t=2024-03-06T09:43:52.689553139Z level=info msg="Executing migration" id="file table idx: parent_folder_path_hash fast folder retrieval"
+logger=migrator t=2024-03-06T09:43:52.699747417Z level=info msg="Executing migration" id="create file_meta table"
+logger=migrator t=2024-03-06T09:43:52.702890534Z level=info msg="Executing migration" id="file table idx: path key"
+logger=migrator t=2024-03-06T09:43:52.706207888Z level=info msg="Executing migration" id="set path collation in file table"
+logger=migrator t=2024-03-06T09:43:52.709351837Z level=info msg="Executing migration" id="managed permissions migration"
+logger=migrator t=2024-03-06T09:43:52.718493262Z level=info msg="Executing migration" id="managed folder permissions alert actions migration"
+logger=migrator t=2024-03-06T09:43:52.721607134Z level=info msg="Executing migration" id="RBAC action name migrator"
+logger=migrator t=2024-03-06T09:43:52.724892756Z level=info msg="Executing migration" id="Add UID column to playlist"
+logger=migrator t=2024-03-06T09:43:52.72880154Z level=info msg="Executing migration" id="Update uid column values in playlist"
+logger=migrator t=2024-03-06T09:43:52.731697312Z level=info msg="Executing migration" id="Add index for uid in playlist"
+logger=migrator t=2024-03-06T09:43:52.739305144Z level=info msg="Executing migration" id="create data_source_usage_by_day table"
+logger=migrator t=2024-03-06T09:43:52.742533717Z level=info msg="Executing migration" id="create data_source_usage_by_day(data_source_id) index"
+logger=migrator t=2024-03-06T09:43:52.746024342Z level=info msg="Executing migration" id="create data_source_usage_by_day(data_source_id, day) unique index"
+logger=migrator t=2024-03-06T09:43:52.749212112Z level=info msg="Executing migration" id="create dashboard_usage_by_day table"
+logger=migrator t=2024-03-06T09:43:52.75932303Z level=info msg="Executing migration" id="create dashboard_usage_sums table"
+logger=migrator t=2024-03-06T09:43:52.762486367Z level=info msg="Executing migration" id="create dashboard_usage_by_day(dashboard_id) index"
+logger=migrator t=2024-03-06T09:43:52.767469191Z level=info msg="Executing migration" id="create dashboard_usage_by_day(dashboard_id, day) index"
+logger=migrator t=2024-03-06T09:43:52.77061964Z level=info msg="Executing migration" id="add column errors_last_1_days to dashboard_usage_sums"
+logger=migrator t=2024-03-06T09:43:52.779658806Z level=info msg="Executing migration" id="add column errors_last_7_days to dashboard_usage_sums"
+logger=migrator t=2024-03-06T09:43:52.783533625Z level=info msg="Executing migration" id="add column errors_last_30_days to dashboard_usage_sums"
+logger=migrator t=2024-03-06T09:43:52.787379199Z level=info msg="Executing migration" id="add column errors_total to dashboard_usage_sums"
+logger=migrator t=2024-03-06T09:43:52.791551218Z level=info msg="Executing migration" id="create user_dashboard_views table"
+logger=migrator t=2024-03-06T09:43:52.799333395Z level=info msg="Executing migration" id="add index user_dashboard_views.user_id"
+logger=migrator t=2024-03-06T09:43:52.802695894Z level=info msg="Executing migration" id="add index user_dashboard_views.dashboard_id"
+logger=migrator t=2024-03-06T09:43:52.805914705Z level=info msg="Executing migration" id="add unique index user_dashboard_views_user_id_dashboard_id"
+logger=migrator t=2024-03-06T09:43:52.810998472Z level=info msg="Executing migration" id="create user_stats table"
+logger=migrator t=2024-03-06T09:43:52.821082527Z level=info msg="Executing migration" id="add unique index user_stats(user_id)"
+logger=migrator t=2024-03-06T09:43:52.82538124Z level=info msg="Executing migration" id="create data_source_cache table"
+logger=migrator t=2024-03-06T09:43:52.828722583Z level=info msg="Executing migration" id="add index data_source_cache.data_source_id"
+logger=migrator t=2024-03-06T09:43:52.838919639Z level=info msg="Executing migration" id="add use_default_ttl column"
+logger=migrator t=2024-03-06T09:43:52.843096631Z level=info msg="Executing migration" id="add data_source_cache.data_source_uid column"
+logger=migrator t=2024-03-06T09:43:52.847390402Z level=info msg="Executing migration" id="remove abandoned data_source_cache records"
+logger=migrator t=2024-03-06T09:43:52.850431477Z level=info msg="Executing migration" id="update data_source_cache.data_source_uid value"
+logger=migrator t=2024-03-06T09:43:52.858861588Z level=info msg="Executing migration" id="add index data_source_cache.data_source_uid"
+logger=migrator t=2024-03-06T09:43:52.862128512Z level=info msg="Executing migration" id="add data_source_cache.ttl_resources_ms column"
+logger=migrator t=2024-03-06T09:43:52.866219242Z level=info msg="Executing migration" id="update data_source_cache.ttl_resources_ms to have the same value as ttl_ms"
+logger=migrator t=2024-03-06T09:43:52.869342751Z level=info msg="Executing migration" id="create data_source_acl table"
+logger=migrator t=2024-03-06T09:43:52.87924795Z level=info msg="Executing migration" id="add index data_source_acl.data_source_id"
+logger=migrator t=2024-03-06T09:43:52.882658205Z level=info msg="Executing migration" id="add unique index datasource_acl.unique"
+logger=migrator t=2024-03-06T09:43:52.886058688Z level=info msg="Executing migration" id="create license_token table"
+logger=migrator t=2024-03-06T09:43:52.890117581Z level=info msg="Executing migration" id="drop recorded_queries table v14"
+logger=migrator t=2024-03-06T09:43:52.900300254Z level=info msg="Executing migration" id="drop recording_rules table v14"
+logger=migrator t=2024-03-06T09:43:52.903272134Z level=info msg="Executing migration" id="create recording_rules table v14"
+logger=migrator t=2024-03-06T09:43:52.906619062Z level=info msg="Executing migration" id="create remote_write_targets table v1"
+logger=migrator t=2024-03-06T09:43:52.9099649Z level=info msg="Executing migration" id="Add prom_name to recording_rules table"
+logger=migrator t=2024-03-06T09:43:52.919231315Z level=info msg="Executing migration" id="ensure remote_write_targets table"
+logger=migrator t=2024-03-06T09:43:52.922418292Z level=info msg="Executing migration" id="create report config table v1"
+logger=migrator t=2024-03-06T09:43:52.925632273Z level=info msg="Executing migration" id="Add index report.user_id"
+logger=migrator t=2024-03-06T09:43:52.928932096Z level=info msg="Executing migration" id="add index to dashboard_id"
+logger=migrator t=2024-03-06T09:43:52.93890404Z level=info msg="Executing migration" id="add index to org_id"
+logger=migrator t=2024-03-06T09:43:52.943062564Z level=info msg="Executing migration" id="Add timezone to the report"
+logger=migrator t=2024-03-06T09:43:52.947111351Z level=info msg="Executing migration" id="Add time_from to the report"
+logger=migrator t=2024-03-06T09:43:52.951227876Z level=info msg="Executing migration" id="Add time_to to the report"
+logger=migrator t=2024-03-06T09:43:52.955218227Z level=info msg="Executing migration" id="Add PDF landscape option to the report"
+logger=migrator t=2024-03-06T09:43:52.959860457Z level=info msg="Executing migration" id="Add monthly day scheduling option to the report"
+logger=migrator t=2024-03-06T09:43:52.969156623Z level=info msg="Executing migration" id="Add PDF layout option to the report"
+logger=migrator t=2024-03-06T09:43:52.973474929Z level=info msg="Executing migration" id="Add PDF orientation option to the report"
+logger=migrator t=2024-03-06T09:43:52.977562485Z level=info msg="Executing migration" id="Update report pdf_orientation from pdf_landscape"
+logger=migrator t=2024-03-06T09:43:52.980503534Z level=info msg="Executing migration" id="create report settings table"
+logger=migrator t=2024-03-06T09:43:52.989285384Z level=info msg="Executing migration" id="Add dashboard_uid field to the report"
+logger=migrator t=2024-03-06T09:43:52.99341033Z level=info msg="Executing migration" id="Add template_vars field to the report"
+logger=migrator t=2024-03-06T09:43:52.997608526Z level=info msg="Executing migration" id="Add option to include dashboard url in the report"
+logger=migrator t=2024-03-06T09:43:53.001589091Z level=info msg="Executing migration" id="Add state field to the report"
+logger=migrator t=2024-03-06T09:43:53.005471226Z level=info msg="Executing migration" id="Add option to add CSV files to the report"
+logger=migrator t=2024-03-06T09:43:53.009488359Z level=info msg="Executing migration" id="Add scheduling start date"
+logger=migrator t=2024-03-06T09:43:53.018405965Z level=info msg="Executing migration" id="Add missing schedule_start date for old reports"
+logger=migrator t=2024-03-06T09:43:53.021666295Z level=info msg="Executing migration" id="Add scheduling end date"
+logger=migrator t=2024-03-06T09:43:53.026691474Z level=info msg="Executing migration" id="Add schedulinng custom interval frequency"
+logger=migrator t=2024-03-06T09:43:53.030834079Z level=info msg="Executing migration" id="Add scheduling custom interval amount"
+logger=migrator t=2024-03-06T09:43:53.03479426Z level=info msg="Executing migration" id="Add workdays only flag to report"
+logger=migrator t=2024-03-06T09:43:53.039284979Z level=info msg="Executing migration" id="create report dashboards table"
+logger=migrator t=2024-03-06T09:43:53.042479511Z level=info msg="Executing migration" id="Add index report_dashboards.report_id"
+logger=migrator t=2024-03-06T09:43:53.050998172Z level=info msg="Executing migration" id="Migrate report fields into report_dashboards"
+logger=migrator t=2024-03-06T09:43:53.054119298Z level=info msg="Executing migration" id="Add formats option to the report"
+logger=migrator t=2024-03-06T09:43:53.059007471Z level=info msg="Executing migration" id="Migrate reports with csv enabled"
+logger=migrator t=2024-03-06T09:43:53.062017138Z level=info msg="Executing migration" id="Migrate ancient reports"
+logger=migrator t=2024-03-06T09:43:53.065260287Z level=info msg="Executing migration" id="create team group table"
+logger=migrator t=2024-03-06T09:43:53.068520881Z level=info msg="Executing migration" id="add index team_group.org_id"
+logger=migrator t=2024-03-06T09:43:53.079253928Z level=info msg="Executing migration" id="add unique index team_group.org_id_team_id_group_id"
+logger=migrator t=2024-03-06T09:43:53.083400727Z level=info msg="Executing migration" id="add index team_group.group_id"
+logger=migrator t=2024-03-06T09:43:53.08675889Z level=info msg="Executing migration" id="create settings table"
+logger=migrator t=2024-03-06T09:43:53.090037908Z level=info msg="Executing migration" id="add unique index settings.section_key"
+logger=migrator t=2024-03-06T09:43:53.099431821Z level=info msg="Executing migration" id="migrate role names"
+logger=migrator t=2024-03-06T09:43:53.1040705Z level=info msg="Executing migration" id="rename orgs roles"
+logger=migrator t=2024-03-06T09:43:53.107388906Z level=info msg="Executing migration" id="remove duplicated org role"
+logger=migrator t=2024-03-06T09:43:53.110399101Z level=info msg="Executing migration" id="data source permissions"
+logger=migrator t=2024-03-06T09:43:53.118784957Z level=info msg="Executing migration" id="data source uid permissions"
+logger=migrator t=2024-03-06T09:43:53.122587753Z level=info msg="Executing migration" id="rename permissions:delegate scope"
+logger=migrator t=2024-03-06T09:43:53.125546669Z level=info msg="Executing migration" id="builtin role migration"
+logger="builtin-role migrator" t=2024-03-06T09:43:53.126183418Z level=info msg="no permission to create"
+logger=migrator t=2024-03-06T09:43:53.12956516Z level=info msg="Executing migration" id="add action column to seed_assignment"
+logger=migrator t=2024-03-06T09:43:53.138808835Z level=info msg="Executing migration" id="add scope column to seed_assignment"
+logger=migrator t=2024-03-06T09:43:53.143579146Z level=info msg="Executing migration" id="remove unique index builtin_role_role_name before nullable update"
+logger=migrator t=2024-03-06T09:43:53.146884641Z level=info msg="Executing migration" id="update seed_assignment role_name column to nullable"
+logger=migrator t=2024-03-06T09:43:53.160435604Z level=info msg="Executing migration" id="add unique index builtin_role_name back"
+logger=migrator t=2024-03-06T09:43:53.163712236Z level=info msg="Executing migration" id="add unique index builtin_role_action_scope"
+logger=migrator t=2024-03-06T09:43:53.167148834Z level=info msg="Executing migration" id="seed permissions migration"
+logger=migrator t=2024-03-06T09:43:53.171019062Z level=info msg="Executing migration" id="managed permissions migration enterprise"
+logger=migrator t=2024-03-06T09:43:53.179742933Z level=info msg="migrations completed" performed=516 skipped=0 duration=2.399519166s
+logger=sqlstore t=2024-03-06T09:43:53.192829071Z level=info msg="Created default admin" user=admin
+logger=sqlstore t=2024-03-06T09:43:53.193011729Z level=info msg="Created default organization"
+logger=licensing t=2024-03-06T09:43:53.198070829Z level=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2024-03-06T09:43:53.233936057Z level=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2024-03-06T09:43:53.234025806Z level=warn msg="Skipping finding plugins as directory does not exist" path=/root/grafa/grafana-9.0.3/data/plugins
+logger=secrets t=2024-03-06T09:43:53.235020096Z level=info msg="Envelope encryption state" enabled=true currentprovider=secretKey.v1
+logger=query_data t=2024-03-06T09:43:53.237521909Z level=info msg="Query Service initialization"
+logger=live.push_http t=2024-03-06T09:43:53.247564189Z level=info msg="Live Push Gateway initialization"
+logger=infra.usagestats.collector t=2024-03-06T09:43:53.393329302Z level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+logger=grafanaStorageLogger t=2024-03-06T09:43:53.395925286Z level=info msg="storage starting"
+logger=report t=2024-03-06T09:43:53.396019038Z level=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2024-03-06T09:43:53.398969327Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=ngalert t=2024-03-06T09:43:53.39904405Z level=info msg="warming cache for startup"
+logger=ngalert.multiorg.alertmanager t=2024-03-06T09:43:53.408995525Z level=info msg="starting MultiOrg Alertmanager"
+logger=context traceID=00000000000000000000000000000000 t=2024-03-06T09:44:23.56833937Z level=error msg="Failed to look up user based on cookie" error="user token not found"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T09:44:23.568959486Z level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=45.141.139.210 time_ms=0 duration=953.355µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 t=2024-03-06T09:44:23.749046132Z level=error msg="Failed to look up user based on cookie" error="user token not found"
+logger=context traceID=00000000000000000000000000000000 t=2024-03-06T09:44:32.621729999Z level=error msg="Failed to look up user based on cookie" error="user token not found"
+logger=http.server t=2024-03-06T09:44:32.666519689Z level=info msg="Successful Login" User=admin@localhost
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:44:44.088632565Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.051798ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:19.221554274Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:19.221638849Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rYdddlPWk status=404 remote_addr=45.141.139.210 time_ms=0 duration=984.188µs size=78 referer=http://139.224.249.112:3000/dashboard/import traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:19.438165372Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:19.438246708Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rYdddlPWk status=404 remote_addr=45.141.139.210 time_ms=1 duration=1.126263ms size=78 referer=http://139.224.249.112:3000/dashboard/import traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:19.644587697Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:19.644665725Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rYdddlPWk status=404 remote_addr=45.141.139.210 time_ms=0 duration=865.847µs size=78 referer=http://139.224.249.112:3000/dashboard/import traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:29.925351837Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:29.925430384Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rYdddlPWk status=404 remote_addr=45.141.139.210 time_ms=1 duration=1.08699ms size=78 referer=http://139.224.249.112:3000/dashboard/import traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:33.88928907Z level=error msg="Dashboard not found" error="Dashboard not found" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:33.889385286Z level=info msg="Request Completed" method=GET path=/api/dashboards/uid/rYdddlPWk status=404 remote_addr=45.141.139.210 time_ms=1 duration=1.234303ms size=78 referer=http://139.224.249.112:3000/dashboard/import traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:42.948257144Z level=error msg="Request Completed" method=GET path=/api/datasources/1/resources/api/v1/series status=500 remote_addr=45.141.139.210 time_ms=1 duration=1.656211ms size=19 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:43.468808967Z level=error msg="Request Completed" method=GET path=/api/datasources/1/resources/api/v1/series status=500 remote_addr=45.141.139.210 time_ms=1 duration=1.461581ms size=19 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=live t=2024-03-06T09:46:43.726126881Z level=info msg="Initialized channel handler" channel=grafana/dashboard/uid/rYdddlPWk address=grafana/dashboard/uid/rYdddlPWk
+logger=tsdb.prometheus t=2024-03-06T09:46:43.783792529Z level=error msg="Instant query failed" query="100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"\"}[10m15s])))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:43.783883415Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=9 duration=9.040147ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:43.932916891Z level=error msg="Instant query failed" query="scalar(node_load5{instance=\"\",job=\"\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:43.933013632Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.661066ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:43.935234265Z level=error msg="Instant query failed" query="scalar(node_load15{instance=\"\",job=\"\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:43.935309339Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.327564ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:43.983308589Z level=error msg="Instant query failed" query="(1 - (node_memory_MemAvailable_bytes{instance=\"\", job=\"\"} / node_memory_MemTotal_bytes{instance=\"\", job=\"\"})) * 100" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:43.98340506Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=2 duration=2.872524ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.123170705Z level=error msg="Instant query failed" query="((node_memory_SwapTotal_bytes{instance=\"\",job=\"\"} - node_memory_SwapFree_bytes{instance=\"\",job=\"\"}) / (node_memory_SwapTotal_bytes{instance=\"\",job=\"\"})) * 100" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.123264444Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.428826ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.126446643Z level=error msg="Instant query failed" query="100 - ((node_filesystem_avail_bytes{instance=\"\",job=\"\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"\",job=\"\",mountpoint=\"/\",fstype!=\"rootfs\"})" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.126576654Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.319348ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.15941766Z level=error msg="Instant query failed" query="count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.159513428Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=2 duration=2.179428ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.18702796Z level=error msg="Instant query failed" query="node_time_seconds{instance=\"\",job=\"\"} - node_boot_time_seconds{instance=\"\",job=\"\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.187124421Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=26 duration=26.306657ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.305041058Z level=error msg="Instant query failed" query="node_filesystem_size_bytes{instance=\"\",job=\"\",mountpoint=\"/\",fstype!=\"rootfs\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.305134877Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=5 duration=5.049154ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.307399462Z level=error msg="Instant query failed" query="node_memory_MemTotal_bytes{instance=\"\",job=\"\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.307483205Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.220183ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.347008759Z level=error msg="Instant query failed" query="node_memory_SwapTotal_bytes{instance=\"\",job=\"\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.347102102Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=9 duration=9.68899ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.398362198Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"\",job=\"\", mode=\"system\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.398485924Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"\",job=\"\", mode=\"user\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.398565651Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"\",job=\"\", mode=\"iowait\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.398658348Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"\",job=\"\", mode=~\".*irq\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.398756416Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"\",job=\"\",  mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.398840857Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"\",job=\"\", mode=\"idle\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"\",job=\"\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.398919733Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=15 duration=15.455825ms size=488 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.481326615Z level=error msg="Range query failed" query="node_memory_MemTotal_bytes{instance=\"\",job=\"\"}" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.481459257Z level=error msg="Range query failed" query="node_memory_MemTotal_bytes{instance=\"\",job=\"\"} - node_memory_MemFree_bytes{instance=\"\",job=\"\"} - (node_memory_Cached_bytes{instance=\"\",job=\"\"} + node_memory_Buffers_bytes{instance=\"\",job=\"\"} + node_memory_SReclaimable_bytes{instance=\"\",job=\"\"})" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.481557353Z level=error msg="Range query failed" query="node_memory_Cached_bytes{instance=\"\",job=\"\"} + node_memory_Buffers_bytes{instance=\"\",job=\"\"} + node_memory_SReclaimable_bytes{instance=\"\",job=\"\"}" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.481653442Z level=error msg="Range query failed" query="node_memory_MemFree_bytes{instance=\"\",job=\"\"}" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.481756881Z level=error msg="Range query failed" query="(node_memory_SwapTotal_bytes{instance=\"\",job=\"\"} - node_memory_SwapFree_bytes{instance=\"\",job=\"\"})" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.481828659Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=8 duration=8.483667ms size=409 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.517543056Z level=error msg="Range query failed" query="irate(node_network_receive_bytes_total{instance=\"\",job=\"\"}[2m15s])*8" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:44.517736648Z level=error msg="Range query failed" query="irate(node_network_transmit_bytes_total{instance=\"\",job=\"\"}[2m15s])*8" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.517803298Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=5 duration=5.367192ms size=172 referer=http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:44.518438733Z level=error msg="Range query failed" query="100 - ((node_filesystem_avail_bytes{instance=\"\",job=\"\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=\"\",job=\"\",device!~'rootfs'})" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:44.518509138Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.080718ms size=93 referer=http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:52.832153832Z level=error msg="Request Completed" method=GET path=/api/datasources/1/resources/api/v1/series status=500 remote_addr=45.141.139.210 time_ms=1 duration=1.45155ms size=19 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus-1&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:53.849394883Z level=error msg="Instant query failed" query="scalar(node_load5{instance=\"localhost:9527\",job=\"node\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:53.849475171Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=7 duration=7.100405ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:53.864882249Z level=error msg="Instant query failed" query="scalar(node_load15{instance=\"localhost:9527\",job=\"node\"}) * 100 / count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:53.864971208Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=4 duration=4.371879ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:53.967112141Z level=error msg="Instant query failed" query="(1 - (node_memory_MemAvailable_bytes{instance=\"localhost:9527\", job=\"node\"} / node_memory_MemTotal_bytes{instance=\"localhost:9527\", job=\"node\"})) * 100" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:53.967186414Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.304388ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.027110621Z level=error msg="Instant query failed" query="100 * (1 - avg(rate(node_cpu_seconds_total{mode=\"idle\", instance=\"localhost:9527\"}[10m15s])))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.027184352Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.154799ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.085192336Z level=error msg="Instant query failed" query="((node_memory_SwapTotal_bytes{instance=\"localhost:9527\",job=\"node\"} - node_memory_SwapFree_bytes{instance=\"localhost:9527\",job=\"node\"}) / (node_memory_SwapTotal_bytes{instance=\"localhost:9527\",job=\"node\"})) * 100" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.085272288Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=6 duration=6.496824ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.123249498Z level=error msg="Instant query failed" query="count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu))" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.123332279Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=4 duration=4.387209ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.169031547Z level=error msg="Instant query failed" query="node_time_seconds{instance=\"localhost:9527\",job=\"node\"} - node_boot_time_seconds{instance=\"localhost:9527\",job=\"node\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.169117726Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=9 duration=9.085533ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.191879304Z level=error msg="Instant query failed" query="100 - ((node_filesystem_avail_bytes{instance=\"localhost:9527\",job=\"node\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"localhost:9527\",job=\"node\",mountpoint=\"/\",fstype!=\"rootfs\"})" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.191954252Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.202674ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.266667582Z level=error msg="Instant query failed" query="node_filesystem_size_bytes{instance=\"localhost:9527\",job=\"node\",mountpoint=\"/\",fstype!=\"rootfs\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.266751425Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=4 duration=4.995478ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.332263198Z level=error msg="Instant query failed" query="node_memory_MemTotal_bytes{instance=\"localhost:9527\",job=\"node\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.332333419Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.549739ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.371425847Z level=error msg="Instant query failed" query="node_memory_SwapTotal_bytes{instance=\"localhost:9527\",job=\"node\"}" err="Post \"/api/v1/query\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.371504132Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=7 duration=7.752025ms size=87 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.450888908Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\", mode=\"system\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:54.451012085Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\", mode=\"user\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:54.45109208Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\", mode=\"iowait\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:54.451160526Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\", mode=~\".*irq\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:54.451223486Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\",  mode!='idle',mode!='user',mode!='system',mode!='iowait',mode!='irq',mode!='softirq'}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:54.451277408Z level=error msg="Range query failed" query="sum(irate(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\", mode=\"idle\"}[2m15s])) / scalar(count(count(node_cpu_seconds_total{instance=\"localhost:9527\",job=\"node\"}) by (cpu)))" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.451331204Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=53 duration=53.208062ms size=488 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.565214419Z level=error msg="Range query failed" query="irate(node_network_receive_bytes_total{instance=\"localhost:9527\",job=\"node\"}[2m15s])*8" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:54.565324426Z level=error msg="Range query failed" query="irate(node_network_transmit_bytes_total{instance=\"localhost:9527\",job=\"node\"}[2m15s])*8" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.565375849Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=6 duration=6.204522ms size=172 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:54.601550136Z level=error msg="Range query failed" query="100 - ((node_filesystem_avail_bytes{instance=\"localhost:9527\",job=\"node\",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance=\"localhost:9527\",job=\"node\",device!~'rootfs'})" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:54.601644921Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=17 duration=17.502767ms size=93 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=tsdb.prometheus t=2024-03-06T09:46:55.252414296Z level=error msg="Range query failed" query="node_memory_MemTotal_bytes{instance=\"localhost:9527\",job=\"node\"}" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:55.252523722Z level=error msg="Range query failed" query="node_memory_MemTotal_bytes{instance=\"localhost:9527\",job=\"node\"} - node_memory_MemFree_bytes{instance=\"localhost:9527\",job=\"node\"} - (node_memory_Cached_bytes{instance=\"localhost:9527\",job=\"node\"} + node_memory_Buffers_bytes{instance=\"localhost:9527\",job=\"node\"} + node_memory_SReclaimable_bytes{instance=\"localhost:9527\",job=\"node\"})" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:55.252632642Z level=error msg="Range query failed" query="node_memory_Cached_bytes{instance=\"localhost:9527\",job=\"node\"} + node_memory_Buffers_bytes{instance=\"localhost:9527\",job=\"node\"} + node_memory_SReclaimable_bytes{instance=\"localhost:9527\",job=\"node\"}" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:55.252690235Z level=error msg="Range query failed" query="node_memory_MemFree_bytes{instance=\"localhost:9527\",job=\"node\"}" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=tsdb.prometheus t=2024-03-06T09:46:55.252748838Z level=error msg="Range query failed" query="(node_memory_SwapTotal_bytes{instance=\"localhost:9527\",job=\"node\"} - node_memory_SwapFree_bytes{instance=\"localhost:9527\",job=\"node\"})" err="Post \"/api/v1/query_range\": unsupported protocol scheme \"\""
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:46:55.252803468Z level=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=45.141.139.210 time_ms=13 duration=13.060704ms size=409 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?var-datasource=Prometheus&var-job=node&var-node=localhost:9527&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:48:10.54447256Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.076628ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:50:18.949198143Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.122573ms size=0 referer= traceID=00000000000000000000000000000000
+logger=settings t=2024-03-06T09:52:41.692110931Z level=info msg="Starting Grafana" version=9.0.3 commit=023f9251a branch=HEAD compiled=2022-07-14T20:47:44Z
+logger=settings t=2024-03-06T09:52:41.692328125Z level=info msg="Config loaded from" file=/root/grafa/grafana-9.0.3/conf/defaults.ini
+logger=settings t=2024-03-06T09:52:41.692343748Z level=info msg="Path Home" path=/root/grafa/grafana-9.0.3
+logger=settings t=2024-03-06T09:52:41.692352818Z level=info msg="Path Data" path=/root/grafa/grafana-9.0.3/data
+logger=settings t=2024-03-06T09:52:41.692361025Z level=info msg="Path Logs" path=/root/grafa/grafana-9.0.3/data/log
+logger=settings t=2024-03-06T09:52:41.692369338Z level=info msg="Path Plugins" path=/root/grafa/grafana-9.0.3/data/plugins
+logger=settings t=2024-03-06T09:52:41.692377697Z level=info msg="Path Provisioning" path=/root/grafa/grafana-9.0.3/conf/provisioning
+logger=settings t=2024-03-06T09:52:41.692386079Z level=info msg="App mode production"
+logger=sqlstore t=2024-03-06T09:52:41.692461824Z level=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2024-03-06T09:52:41.713178496Z level=info msg="Starting DB migrations"
+logger=migrator t=2024-03-06T09:52:41.719049469Z level=info msg="migrations completed" performed=0 skipped=512 duration=730.273µs
+logger=licensing t=2024-03-06T09:52:41.719647757Z level=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2024-03-06T09:52:41.755079207Z level=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2024-03-06T09:52:41.755153416Z level=warn msg="Skipping finding plugins as directory does not exist" path=/root/grafa/grafana-9.0.3/data/plugins
+logger=secrets t=2024-03-06T09:52:41.755913554Z level=info msg="Envelope encryption state" enabled=true currentprovider=secretKey.v1
+logger=query_data t=2024-03-06T09:52:41.758150566Z level=info msg="Query Service initialization"
+logger=live.push_http t=2024-03-06T09:52:41.761890904Z level=info msg="Live Push Gateway initialization"
+logger=infra.usagestats.collector t=2024-03-06T09:52:41.896731027Z level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+logger=grafanaStorageLogger t=2024-03-06T09:52:41.899702858Z level=info msg="storage starting"
+logger=report t=2024-03-06T09:52:41.899781606Z level=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2024-03-06T09:52:41.900016987Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=ngalert t=2024-03-06T09:52:41.900232228Z level=info msg="warming cache for startup"
+logger=ngalert.multiorg.alertmanager t=2024-03-06T09:52:41.900315451Z level=info msg="starting MultiOrg Alertmanager"
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:52:46.793036565Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.365583ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2024-03-06T09:52:47.511019536Z level=info msg="Initialized channel handler" channel=grafana/dashboard/uid/rYdddlPWk address=grafana/dashboard/uid/rYdddlPWk
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T09:52:49.279730591Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.366608ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T09:53:03.439840773Z level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=162.142.125.225 time_ms=0 duration=458.013µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T09:53:06.90653196Z level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=162.142.125.225 time_ms=0 duration=425.481µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T09:53:07.333476833Z level=info msg="Request Completed" method=PRI path=* status=302 remote_addr=162.142.125.225 time_ms=0 duration=407.667µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T09:53:11.42494536Z level=info msg="Request Completed" method=PRI path=* status=302 remote_addr=162.142.125.225 time_ms=0 duration=548.055µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context userId=0 orgId=0 uname= t=2024-03-06T09:53:12.823907344Z level=info msg="Request Completed" method=GET path=/favicon.ico status=302 remote_addr=162.142.125.225 time_ms=0 duration=444.766µs size=29 referer=
+logger=sqlstore t=2024-03-06T10:07:41.857922033Z level=info msg="Database locked, sleeping then retrying" error="database is locked" retry=0
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T10:25:54.162450101Z level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=61.242.135.62 time_ms=0 duration=520.628µs size=29 referer= traceID=00000000000000000000000000000000
+logger=http.server t=2024-03-06T10:26:09.545472277Z level=info msg="Successful Login" User=admin@localhost
+logger=context traceID=00000000000000000000000000000000 t=2024-03-06T10:26:20.974347292Z level=error msg="Failed to look up user based on cookie" error="context canceled"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T10:26:20.974432796Z level=error msg= error="context canceled" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T10:26:20.974473672Z level=info msg="Request Completed" method=GET path=/ status=403 remote_addr=61.242.135.62 time_ms=0 duration=204.046µs size=47 referer=http://139.224.249.112:3000/login traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T10:26:24.446901275Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=61.242.135.62 time_ms=0 duration=963.047µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T10:49:17.398884698Z level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=113.215.189.33 time_ms=0 duration=486.19µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T10:49:17.427859575Z level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=113.215.189.24 time_ms=0 duration=418.122µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T10:49:17.460671997Z level=info msg="Request Completed" method=GET path=/img/fav32.png status=302 remote_addr=113.215.189.27 time_ms=0 duration=416.388µs size=29 referer= traceID=00000000000000000000000000000000
+logger=settings t=2024-03-06T10:52:39.397576795Z level=info msg="Starting Grafana" version=9.0.3 commit=023f9251a branch=HEAD compiled=2022-07-14T20:47:44Z
+logger=settings t=2024-03-06T10:52:39.397794899Z level=info msg="Config loaded from" file=/root/grafa/grafana-9.0.3/conf/defaults.ini
+logger=settings t=2024-03-06T10:52:39.397815122Z level=info msg="Path Home" path=/root/grafa/grafana-9.0.3
+logger=settings t=2024-03-06T10:52:39.397828346Z level=info msg="Path Data" path=/root/grafa/grafana-9.0.3/data
+logger=settings t=2024-03-06T10:52:39.397841939Z level=info msg="Path Logs" path=/root/grafa/grafana-9.0.3/data/log
+logger=settings t=2024-03-06T10:52:39.397850591Z level=info msg="Path Plugins" path=/root/grafa/grafana-9.0.3/data/plugins
+logger=settings t=2024-03-06T10:52:39.397859228Z level=info msg="Path Provisioning" path=/root/grafa/grafana-9.0.3/conf/provisioning
+logger=settings t=2024-03-06T10:52:39.397868136Z level=info msg="App mode production"
+logger=sqlstore t=2024-03-06T10:52:39.397946615Z level=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2024-03-06T10:52:39.419128773Z level=info msg="Starting DB migrations"
+logger=migrator t=2024-03-06T10:52:39.424841064Z level=info msg="migrations completed" performed=0 skipped=512 duration=672.639µs
+logger=licensing t=2024-03-06T10:52:39.425346127Z level=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2024-03-06T10:52:39.460728987Z level=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2024-03-06T10:52:39.46080049Z level=warn msg="Skipping finding plugins as directory does not exist" path=/root/grafa/grafana-9.0.3/data/plugins
+logger=secrets t=2024-03-06T10:52:39.461400866Z level=info msg="Envelope encryption state" enabled=true currentprovider=secretKey.v1
+logger=query_data t=2024-03-06T10:52:39.464023804Z level=info msg="Query Service initialization"
+logger=live.push_http t=2024-03-06T10:52:39.473611831Z level=info msg="Live Push Gateway initialization"
+logger=infra.usagestats.collector t=2024-03-06T10:52:39.603255918Z level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+logger=grafanaStorageLogger t=2024-03-06T10:52:39.604384429Z level=info msg="storage starting"
+logger=report t=2024-03-06T10:52:39.604484504Z level=warn msg="Scheduling and sending of reports disabled, no image renderer found/installed. For image rendering support please install the grafana-image-renderer plugin. Read more at https://grafana.com/docs/grafana/latest/administration/image_rendering/"
+logger=http.server t=2024-03-06T10:52:39.616310211Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=ngalert t=2024-03-06T10:52:39.61639274Z level=info msg="warming cache for startup"
+logger=ngalert.multiorg.alertmanager t=2024-03-06T10:52:39.616493442Z level=info msg="starting MultiOrg Alertmanager"
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T10:52:43.250292195Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=61.242.135.62 time_ms=4 duration=4.932285ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2024-03-06T10:52:43.392329782Z level=info msg="Initialized channel handler" channel=grafana/dashboard/uid/rYdddlPWk address=grafana/dashboard/uid/rYdddlPWk
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T10:52:51.000106015Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.096016ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T10:53:10.963336183Z level=info msg="Request Completed" method=POST path=/api/alertmanager/grafana/config/api/v1/alerts status=202 remote_addr=45.141.139.210 time_ms=8 duration=8.894421ms size=35 referer="http://139.224.249.112:3000/alerting/notifications/receivers/new?alertmanager=grafana" traceID=00000000000000000000000000000000
+logger=alerting.notifier.email t=2024-03-06T10:53:17.248072917Z level=error msg="Missing receiver"
+logger=alerting.notifier.email t=2024-03-06T10:53:17.248135708Z level=error msg="Missing group labels"
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T10:53:51.72601691Z level=info msg="Request Completed" method=POST path=/api/alertmanager/grafana/config/api/v1/alerts status=202 remote_addr=45.141.139.210 time_ms=7 duration=7.881714ms size=35 referer="http://139.224.249.112:3000/alerting/notifications/receivers/supermao/edit?alertmanager=grafana" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T10:56:56.84652319Z level=error msg="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId A is missing an expression" error="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId A is missing an expression" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T10:56:56.846619471Z level=info msg="Request Completed" method=POST path=/api/v1/eval status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.512343ms size=182 referer=http://139.224.249.112:3000/alerting/new traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:07:35.578305977Z level=error msg="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" error="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:07:35.578399203Z level=info msg="Request Completed" method=POST path=/api/v1/eval status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.999986ms size=182 referer=http://139.224.249.112:3000/alerting/new traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:07:49.683517712Z level=error msg="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" error="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:07:49.683609984Z level=info msg="Request Completed" method=POST path=/api/v1/eval status=400 remote_addr=45.141.139.210 time_ms=1 duration=1.754434ms size=182 referer=http://139.224.249.112:3000/alerting/new traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:09:09.685164676Z level=error msg="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" error="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:09:09.685251326Z level=info msg="Request Completed" method=POST path=/api/v1/eval status=400 remote_addr=45.141.139.210 time_ms=5 duration=5.216738ms size=182 referer=http://139.224.249.112:3000/alerting/new traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:09:23.862116167Z level=error msg="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" error="Failed to evaluate queries and expressions: failed to execute conditions: math command for refId B is missing an expression" remote_addr=45.141.139.210 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:09:23.862200661Z level=info msg="Request Completed" method=POST path=/api/v1/eval status=400 remote_addr=45.141.139.210 time_ms=7 duration=7.728554ms size=182 referer=http://139.224.249.112:3000/alerting/new traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:13:52.710367646Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.130926ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:14:21.616073891Z level=info msg="Request Completed" method=POST path=/api/alertmanager/grafana/config/api/v1/alerts status=202 remote_addr=45.141.139.210 time_ms=13 duration=13.910726ms size=35 referer=http://139.224.249.112:3000/alerting/routes traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:28:16.408296818Z level=info msg="Request Completed" method=GET path=/api/ruler/grafana/api/v1/rules/这是报警测试/hello status=202 remote_addr=45.141.139.210 time_ms=3 duration=3.165633ms size=27 referer=http://139.224.249.112:3000/ traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:28:16.616768454Z level=info msg="Request Completed" method=POST path=/api/ruler/grafana/api/v1/rules/这是报警测试 status=202 remote_addr=45.141.139.210 time_ms=46 duration=46.551309ms size=45 referer=http://139.224.249.112:3000/ traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:29:44.639694586Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.8338ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:29:59.243083304Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=2 duration=2.058724ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:30:04.913626116Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.897619ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:30:26.078504986Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.425661ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:30:39.160170188Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.353082ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:31:10.727169702Z level=info msg="Request Completed" method=DELETE path=/api/ruler/grafana/api/v1/rules/这是报警测试/hello status=202 remote_addr=45.141.139.210 time_ms=5 duration=5.959163ms size=27 referer="http://139.224.249.112:3000/alerting/grafana/My7-050Ik/view?returnTo=%2Falerting%2Flist" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:32:54.763376122Z level=info msg="Request Completed" method=GET path=/api/ruler/grafana/api/v1/rules/这是报警测试/hello status=202 remote_addr=45.141.139.210 time_ms=2 duration=2.058559ms size=27 referer=http://139.224.249.112:3000/ traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:32:55.34265261Z level=info msg="Request Completed" method=POST path=/api/ruler/grafana/api/v1/rules/这是报警测试 status=202 remote_addr=45.141.139.210 time_ms=33 duration=33.781692ms size=45 referer=http://139.224.249.112:3000/ traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:35:24.148015872Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.213008ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:36:39.097758864Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.886254ms size=0 referer= traceID=00000000000000000000000000000000
+logger=ngalert uid=vjYX0cAIz org=1 t=2024-03-06T11:39:22.799845854Z level=info msg="fetching new version of the rule"
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:39:22.799833136Z level=info msg="Request Completed" method=POST path=/api/ruler/grafana/api/v1/rules/这是报警测试 status=202 remote_addr=45.141.139.210 time_ms=46 duration=46.469931ms size=45 referer="http://139.224.249.112:3000/alerting/vjYX0cAIz/edit?returnTo=%2Fd%2FrYdddlPWk%2Fnode-exporter-full%3ForgId%3D1%26from%3Dnow-5m%26to%3Dnow%26editPanel%3D77%26tab%3Dalert" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:40:44.761625652Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.685776ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:46:39.497658074Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.76257ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:48:55.947841741Z level=info msg="Request Completed" method=DELETE path=/api/ruler/grafana/api/v1/rules/这是报警测试/hello status=202 remote_addr=45.141.139.210 time_ms=36 duration=36.076378ms size=27 referer="http://139.224.249.112:3000/d/rYdddlPWk/node-exporter-full?orgId=1&refresh=1m&editPanel=77&tab=alert" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:51:18.797621935Z level=info msg="Request Completed" method=GET path=/api/ruler/grafana/api/v1/rules/这是报警测试/hello status=202 remote_addr=45.141.139.210 time_ms=3 duration=3.297882ms size=27 referer=http://139.224.249.112:3000/ traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:51:18.993679371Z level=info msg="Request Completed" method=POST path=/api/ruler/grafana/api/v1/rules/这是报警测试 status=202 remote_addr=45.141.139.210 time_ms=26 duration=26.556043ms size=45 referer=http://139.224.249.112:3000/ traceID=00000000000000000000000000000000
+logger=licensing t=2024-03-06T11:52:39.61583807Z level=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2024-03-06T11:52:39.615893026Z level=warn msg="failed to load or validate token" err="license token file not found: /root/grafa/grafana-9.0.3/data/license.jwt"
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:52:40.940474948Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.614949ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:52:44.204965076Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.151429ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:54:00.235087895Z level=info msg="Request Completed" method=GET path=/api/ruler/grafana/api/v1/rules/这是报警测试/hello status=202 remote_addr=45.141.139.210 time_ms=3 duration=3.33029ms size=4287 referer="http://139.224.249.112:3000/alerting/new?returnTo=%2Falerting%2Flist" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T11:54:00.466849838Z level=info msg="Request Completed" method=POST path=/api/ruler/grafana/api/v1/rules/这是报警测试 status=202 remote_addr=45.141.139.210 time_ms=66 duration=66.093805ms size=45 referer="http://139.224.249.112:3000/alerting/new?returnTo=%2Falerting%2Flist" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T12:04:17.524946662Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.315875ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T12:04:22.605312933Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=45.141.139.210 time_ms=1 duration=1.315417ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T12:20:29.63522718Z level=info msg="Request Completed" method=GET path=/ status=302 remote_addr=193.118.53.58 time_ms=0 duration=419.222µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context userId=0 orgId=0 uname= t=2024-03-06T12:20:33.918572102Z level=info msg="Request Completed" method=GET path=/favicon.ico status=302 remote_addr=193.118.53.58 time_ms=0 duration=435.777µs size=29 referer=
+logger=licensing t=2024-03-06T12:52:39.614786102Z level=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2024-03-06T12:52:39.614850799Z level=warn msg="failed to load or validate token" err="license token file not found: /root/grafa/grafana-9.0.3/data/license.jwt"
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2024-03-06T12:55:26.296869344Z level=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=61.242.130.200 time_ms=4 duration=4.330168ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2024-03-06T13:12:12.607135238Z level=info msg="Request Completed" method=GET path=/ui/authentication status=302 remote_addr=45.56.108.128 time_ms=0 duration=435.928µs size=29 referer= traceID=00000000000000000000000000000000
+logger=licensing t=2024-03-06T13:52:39.614302823Z level=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2024-03-06T13:52:39.614364545Z level=warn msg="failed to load or validate token" err="license token file not found: /root/grafa/grafana-9.0.3/data/license.jwt"
